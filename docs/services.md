@@ -5,10 +5,12 @@ Get in touch with us to see if we can help you!
 [Contact](contact.md)
 
 ## Consultations 
-The first step is to get in touch with us - our services are free of charge.  When you request a consultation, it is helpful if you provide the following information:
-- the type of biomolecule(s) you are interested in
-- the embedding of the molecules
-- the outcome that you would like to predict.
+The first step is to get in touch with us - our services are free of charge. When you request a consultation, it is helpful if you provide the following information:
+  
+* the type of biomolecule(s) you are interested in
+* the embedding of the molecules
+* the outcome that you would like to predict.
+
 The initial consultation takes about one hour. In this initial consultation, we clarify further aspects and then suggest an approach moving forward: Either providing you with resources, or investigating your question for you in a small-scale project.
 
 ## Small-scale projects 
