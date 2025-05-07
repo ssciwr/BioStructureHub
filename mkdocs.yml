@@ -4,6 +4,7 @@ site_name: Bio-Structure Hub
 #=======    Theme Settings   =====
 theme:
   name: material
+  logo: images/Logoleiste_SSC_4c.png
   palette:
 
 
@@ -22,8 +23,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-
-
 #=======    Website Navigation settings   =====
 nav:
   - Home: index.md
@@ -31,3 +30,5 @@ nav:
   - Resources: resources.md
   - Contact: contact.md
 
+extra_css:
+  - stylesheets/extra.css
