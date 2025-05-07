@@ -19,12 +19,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - run: |
+          echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+          echo "content_hash=$(sha256sum requirements.txt mkdocs.yml | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: mkdocs-material-${{ env.cache_id }}-${{ env.content_hash }}
           path: .cache 
           restore-keys: |
-            mkdocs-material-
+            mkdocs-material-${{ env.cache_id }}-
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
