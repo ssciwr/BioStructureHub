@@ -1,4 +1,4 @@
-# Contact
+# CONTACT
 
 Do not hesitate to get in touch with us! You can send us an email at ssc@iwr.uni-heidelberg.de.
 
