@@ -1,10 +1,10 @@
-We offer a range of models from general structure prediction models to specialized tools. These can be accessed on your local computer, using cloud solutions, or in high-performance computing environments.
+We offer a range of resources from general structure prediction methods to specialized tools. These can be accessed on your local computer, using cloud solutions, or in high-performance computing environments.
 
-## Tools 
+## Tools
 
-* General models: We offer support in using and interpreting the results of general models such as  [AlphaFold 3](https://doi.org/10.1038/s41586-024-07487-w) or [Boltz-1](https://doi.org/10.1101/2024.11.19.624167).
+* General models: We offer support in using and interpreting the results of general approaches such as  [AlphaFold3](https://doi.org/10.1038/s41586-024-07487-w) or [Boltz-1](https://doi.org/10.1101/2024.11.19.624167).
 
-* For specialized tasks beyond the capabilities of general models we offer custom solutions, to find the best model for your project!
+* For specialized tasks beyond the capabilities of general methods we offer custom solutions, to find the best model for your project!
 
 
 ## Infrastructure

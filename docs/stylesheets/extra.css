@@ -1,6 +1,16 @@
+
+
+:root  > * {
+  --md-primary-fg-color:        #FFFFFF /*#f4f1ea;  */
+  --md-primary-fg-color--light: #590d08;
+  --md-primary-fg-color--dark:  #590d08;
+  --md-typeset-a-color: #c61826; /* link color */ 
+  --md-text-font:"Libre Franklin";
+}
+
 .md-header__button.md-logo {
     margin: 0;
-    padding: 0;
+    padding: 1;
 }
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
     height: 2.3rem;

@@ -1,0 +1,2 @@
+# Projects
+Current projects in the Bio-Structure Hub range from carefully cofolding the components of large protein complex structures, to adding molecular cofactors to improve the quality of predicted structures, or modeling interaction sites for various species. We assist in leveraging structure predictions to plan future experiments, or run preliminary simulations to be used in proposals for future projects.
