@@ -10,25 +10,27 @@ theme:
 
     # Light mode
     - scheme: default
-      primary: green
-      accent: light-green
+      primary: white
+      accent: custom
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Dark mode
     - scheme: slate
-      primary: green
-      accent: light-green
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
 #=======    Website Navigation settings   =====
 nav:
-  - Home: index.md
-  - Services: services.md
-  - Resources: resources.md
-  - Contact: contact.md
+  - HOME: index.md
+  - ABOUT: about.md
+  - SERVICES: services.md
+  - PROJECTS: projects.md
+  - RESOURCES: resources.md
+  - CONTACT: contact.md
 
 extra_css:
   - stylesheets/extra.css
