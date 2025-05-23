@@ -2,7 +2,7 @@
 We provide software development and scientific support with structure predictions of biomolecules.
 Get in touch with us to see if we can help you!
 
-[Contact us!](contact.md)
+[Contact us!](mailto:ssc-biostructurehub@uni-heidelberg.de)
 
 ## Consultations
 The first step is to get in touch with us - our services are free of charge. When you request a consultation, it is helpful if you provide the following information:
