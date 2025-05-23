@@ -4,7 +4,7 @@ Get in touch with us to see if we can help you!
 
 [Contact us!](mailto:ssc-biostructurehub@uni-heidelberg.de)
 
-## Consultations
+## Consultation
 The first step is to get in touch with us - our services are free of charge. When you request a consultation, it is helpful if you provide the following information:
   
 * the type of biomolecule(s) you are interested in
