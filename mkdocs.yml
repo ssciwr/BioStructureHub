@@ -38,3 +38,8 @@ extra_css:
 markdown_extensions:
   pymdownx.snippets:
       base_path: 'docs/'
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  
