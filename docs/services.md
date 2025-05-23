@@ -19,7 +19,7 @@ Following up on a consultation, projects can receive support. This could be a sm
 Recurring support requests in the same project can lead to a longer-term collaboration. We support third-party funding applications.
 
 ## Training
-For larger projects we also offer collaborations by training any member of your team. We offer continuous support and resources for independent work. This includes advice on how to find and use appropriate resources such as documentation, software and pipelines.
+For larger projects we also offer collaborations by training a member of your team. We offer continuous support and resources for independent work. This includes advice on how to find and use appropriate resources such as documentation, software and pipelines.
 
 ## Teaching
 Best practices and guides will be collected in tutorials and (virtual) coursework.
