@@ -25,12 +25,12 @@ theme:
         name: Switch to light mode
 #=======    Website Navigation settings   =====
 nav:
-  - HOME: index.md
-  - ABOUT: about.md
-  - SERVICES: services.md
-  - PROJECTS: projects.md
-  - RESOURCES: resources.md
-  - CONTACT: contact.md
+  - Home: index.md
+  - About: about.md
+  - Services: services.md
+  - Projects: projects.md
+  - Resources: resources.md
+  - Contact: contact.md
 
 extra_css:
   - stylesheets/extra.css
