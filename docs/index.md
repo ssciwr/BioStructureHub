@@ -7,5 +7,9 @@ The Bio-Structure hub aims to aid researchers in the use of structure prediction
 
 We focus on sustainable software and reproducible science. We aim to bridge the gap between wet lab research and *in silico* predictions. 
 
-The Bio-Structure Hub is funded by the [Klaus-Tschira Stiftung](https://klaus-tschira-stiftung.de/) through project number 00.026.2024, Scientific Software funding line.
+
+The Bio-Structure Hub is enabled by the [Klaus-Tschira Stiftung](https://klaus-tschira-stiftung.de/) through project number 00.026.2024, Scientific Software funding line.
+
+
+![image_alt](images/KTS_Logo_RGB.png){ align=right : style="transform: scale(0.75);"}
 
