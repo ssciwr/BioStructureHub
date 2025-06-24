@@ -18,7 +18,7 @@ theme:
 
     # Dark mode
     - scheme: slate
-      primary: custom
+      primary: black
       accent: custom
       toggle:
         icon: material/toggle-switch
