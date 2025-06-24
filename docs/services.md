@@ -2,13 +2,15 @@
 We provide software development and scientific support with structure predictions of biomolecules.
 Get in touch with us to see if we can help you!
 
-[Contact us!](contact.md)
+[Contact us!](mailto:ssc-biostructurehub@uni-heidelberg.de)
 
-## Consultations
+## Consultation
 The first step is to get in touch with us - our services are free of charge. When you request a consultation, it is helpful if you provide the following information:
   
-* the type of biomolecule(s) you are interested in
-* the scientific question you want to address
+* the type of biomolecule(s) you are interested in,
+* the scientific question you want to address,
+* the outcome you want to predict.
+
 
 The initial consultation takes about one hour. In this initial consultation, we clarify further aspects and then suggest an approach moving forward: Either providing you with resources, or investigating your question for you in a small-scale project.
 
@@ -19,7 +21,9 @@ Following up on a consultation, projects can receive support. This could be a sm
 Recurring support requests in the same project can lead to a longer-term collaboration. We support third-party funding applications.
 
 ## Training
-For larger projects we also offer collaborations by training any member of your team. We offer continuous support and resources for independent work. This includes advice on how to find and use appropriate resources such as documentation, software and pipelines.
+
+For larger projects we also offer collaborations by training a member of your team. We offer continuous support and resources for independent work. This includes advice on how to find and use appropriate resources such as documentation, software and pipelines.
+
 
 ## Teaching
 Best practices and guides will be collected in tutorials and (virtual) coursework.
