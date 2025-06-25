@@ -6,8 +6,6 @@ theme:
   name: material
   logo: images/Logoleiste_SSC_4c.png
   palette:
-
-
     # Light mode
     - scheme: default
       primary: white
@@ -23,10 +21,20 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+
+  features:
+    #- navigation.tabs
+    - navigation.indexes # removes empty index from navigation
+    - navigation.tracking
+    - toc.integrate
+
+
 #=======    Website Navigation settings   =====
 nav:
   - Home: index.md
   - About: about.md
+  - News:
+    - blog/index.md
   - Services: services.md
   - Projects: projects.md
   - Resources: resources.md
@@ -43,4 +51,11 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: 'docs/'
 
-  
+
+plugins:
+  - blog:
+      archive: false
+      archive_toc: true
+      authors: false
+      blog_toc: true
+  - search
