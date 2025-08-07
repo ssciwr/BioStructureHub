@@ -26,7 +26,7 @@ theme:
     #- navigation.tabs
     - navigation.indexes # removes empty index from navigation
     - navigation.tracking
-    - toc.integrate
+    #- toc.integrate
 
 
 #=======    Website Navigation settings   =====
@@ -38,6 +38,7 @@ nav:
   - Services: services.md
   - Projects: projects.md
   - Resources: resources.md
+  - Tutorials: tutorials.md # add Boltz and Hexlix as well
   - How to cite us: cite.md
   - Contact: contact.md
 
