@@ -33,3 +33,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Run Alingment notebook
+      run: |
+        cd notebooks
+        python -m pytest --nbval AFold_Alignment_CPU.ipynb
+    - name: Run Inference notebook
+      run: |
+        cd notebooks
+        python -m pytest --nbval AFold_Diffusion_GPU.ipynb
+    - name: Run Analysis
+      run: |  
+        cd notebooks
+        python -m pytest --nbval AFold_Diffusion_GPU.ipynb
