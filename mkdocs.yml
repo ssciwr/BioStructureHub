@@ -38,7 +38,9 @@ nav:
   - Services: services.md
   - Projects: projects.md
   - Resources: resources.md
-  - Tutorials: tutorials.md # add Boltz and Hexlix as well
+  - Tutorials: 
+      - tutorials.md # add Boltz and Hexlix as well
+      #- tutorials2.md 
   - How to cite us: cite.md
   - Contact: contact.md
 

@@ -1,4 +1,4 @@
-# AlphaFold 3 on bwVisu
+# AlphaFold3 on bwVisu
 
 Welcome to the AlphaFold Tutorial for bwVisu! 
 
@@ -32,10 +32,10 @@ The first step of the AlphaFold prediction is a multi-sequence alignment (MSA).
 
 For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for the second step will be requested later. 
 
-![Screenshot](images/tutorial/bwVisu_Afold_visu_cpu.png)
+![Screenshot](images/tutorial/bwVisu_CPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
-Upload the alphafold parameters to a directory in your home, such as /af3model. 
+Upload the alphafold parameters to a directory in your home, such as `/af3models`. 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
 
@@ -43,11 +43,11 @@ Upload the alphafold parameters to a directory in your home, such as /af3model.
 
 ### Step 5: Set Up Your MSA Within the Notebook 
 
-Open Afold_Alignment_CPU.ipynb.
+Open `Afold_Alignment_CPU.ipynb`.
 
 #### Set Environment Variables 
 
-Add the directory with the alphafold parameters to ALPHAFOLD_MODEL_DIR: 
+Add the directory with the alphafold parameters to `ALPHAFOLD_MODEL_DIR`: 
 
     ALPHAFOLD_MODEL_DIR = "af3models" 
 		  
@@ -60,11 +60,11 @@ Decide where you want your working directory and output files to be:
 
 #### Prepare Input File 
 
-First we prepare the .json input file that will be tell AlphaFold what to predict. An introduction on json files can be found [here](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730).
+First we prepare the `.json` input file that will be tell AlphaFold what to predict. An introduction to the json file format can be found [here](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730).
 
 More information and examples on how these files are structured can be found in the [AlphaFold3 github](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure), with examples [here](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example). 
 
-Important parameters in the input file are the “name”, “sequence” and “chains”. Upon executing this cell, the input file will be written to your working directory. Remember the “name” as it is needed for step II. 
+Important parameters in the input file are the `name`, `sequence` and `chains`. Upon executing this cell, the input file will be written to your working directory. Remember the `name` as it is needed for the [diffusion run](#step-7-set-up-your-diffusion-run-within-the-notebook). 
 
 #### Write Run File 
 
@@ -85,7 +85,7 @@ This may take a few minutes, but eventually, you should see...
 
 #### Verify Output 
 
-In the output directory, there should be a second JSON file. This includes all the information from the input file and the results of the MSA. 
+In the output directory, there should be a second `.json` file. This includes all the information from the input file and the results of the MSA. 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_json.png)
 {: style="height:89px;width:268px"}
@@ -106,14 +106,14 @@ For the inference step we need a GPU, so we need to request a GPU node on bwVisu
 
 The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
 
-![Screenshot](images/tutorial/bwVisu_Afold_visu_gpu.png)
+![Screenshot](images/tutorial/bwVisu_GPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
 
- Open AFold_Diffusion_GPU.ipynb.
+ Open `AFold_Diffusion_GPU.ipynb`.
 
 #### Set Environment Variables 
 
@@ -165,7 +165,7 @@ The best model is presented in the output directory as well, with its structure 
 
 ### Step 8: Analyze your results
 
-Open the last notebook Afold_Confidence_Levels.ipynb to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
+Open the last notebook `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as [Pymol](https://pymol.org/) or [ChimeraX](https://www.cgl.ucsf.edu/chimerax/). To visualize the pIDDT in "classic" AlphaFold colors, use [this](https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/) quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
