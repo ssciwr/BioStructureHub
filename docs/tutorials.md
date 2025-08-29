@@ -22,7 +22,7 @@ Each user needs to individually obtain the model weights for AlphaFold3. Downloa
 
 ### Step 3: Connect to bwVisu and Start Jupyter 
 
-Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.uni-heidelberg.de/ ) and log in with your credentials and one-time password. 
+Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.uni-heidelberg.de/ ) and log in with your credentials and one-time password. Please note that you need to be connected to Heidelberg University's VPN if you are connecting from outside the campus.
 
 Choose Jupyter and start a new session. 
 
