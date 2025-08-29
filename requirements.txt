@@ -4,6 +4,7 @@ nbval
 pre-commit
 pytest
 pandas
+biopython
 numpy
 matplotlib
 seaborn
