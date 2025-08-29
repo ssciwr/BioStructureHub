@@ -40,7 +40,7 @@ jobs:
     - name: Run Inference notebook
       run: |
         cd notebooks
-        python -m pytest --nbval AFold_Diffusion_GPU.ipynb
+        python -m pytest --nbval AFold_Confidence_Levels.ipynb
     - name: Run Analysis
       run: |  
         cd notebooks
