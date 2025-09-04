@@ -26,6 +26,8 @@ Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.u
 
 Choose Jupyter and start a new session. 
 
+
+
 ### Step 4: Prepare for AlphaFold Prediction 
 
 The first step of the AlphaFold prediction is a multi-sequence alignment (MSA). 
@@ -34,6 +36,12 @@ For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for
 
 ![Screenshot](images/tutorial/bwVisu_CPU.png)
 <!--{: style="height:500px;width:750px"}-->
+
+Upload the notebooks in (link) by clicking on the upload button:
+
+![Screenshot](images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+
+After the upload, you can see the notebooks in the file browser on the left.
 
 Upload the alphafold parameters to a directory in your home, such as `/af3models`. 
 
@@ -54,17 +62,21 @@ Add the directory with the alphafold parameters to `ALPHAFOLD_MODEL_DIR`:
 
 Decide where you want your working directory and output files to be: 
 
-    ALPHAFOLD_WORKING_DIR = "afold_test/" 
-    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR + "output" 
+    ALPHAFOLD_WORKING_DIR = Path("afold_test")
+    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
+
+These directories can be created by clicking on the folder icon on the top left:
+
+![Screenshot](images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
 		  
 
 #### Prepare Input File 
 
-First we prepare the `.json` input file that will be tell AlphaFold what to predict. An introduction to the json file format can be found [here](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730).
+First we prepare the `.json` input file that will tell AlphaFold what to predict. An introduction to the json file format can be found [here](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730).
 
-More information and examples on how these files are structured can be found in the [AlphaFold3 github](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure), with examples [here](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example). 
+More information and examples on how these files are structured can be found in the [AlphaFold3 github](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure), with example input files [here](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example). 
 
-Important parameters in the input file are the `name`, `sequence` and `chains`. Upon executing this cell, the input file will be written to your working directory. Remember the `name` as it is needed for the [diffusion run](#step-7-set-up-your-diffusion-run-within-the-notebook). 
+Important parameters in the input file are the `name`, `sequence` and `id`, which labels the chain ID. Upon executing this cell, the input file will be written to your working directory. Remember the `name` as it is needed later for the [diffusion run](#step-7-set-up-your-diffusion-run-within-the-notebook). 
 
 #### Write Run File 
 
@@ -85,7 +97,7 @@ This may take a few minutes, but eventually, you should see...
 
 #### Verify Output 
 
-In the output directory, there should be a second `.json` file. This includes all the information from the input file and the results of the MSA. 
+In the output directory, there should be a second `.json` file in the `output/test` directory. This includes all the information from the input file and the results of the MSA. 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_json.png)
 {: style="height:89px;width:268px"}
@@ -119,18 +131,18 @@ Larger jobs (= longer sequences, more chains) require more memory. To access the
 
 Add the directory with the alphafold parameters to ALPHAFOLD_MODEL_DIR: 
 
-    ALPHAFOLD_MODEL_DIR = "af3models" 
+    ALPHAFOLD_MODEL_DIR = Path("af3models")
 		  
 
 Link the output of the MSA prediction, and the project name given in the MSA input file 
 
-    ALPHAFOLD_WORKING_DIR = "afold_test/"  
-    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR+"output" 
+    ALPHAFOLD_WORKING_DIR = Path("afold_test")
+    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
 
 
 Decide where you want your output files to be: 
 
-    ALPHAFOLD_RESULTS_DIR_PART2 = ALPHAFOLD_WORKING_DIR+"output_gpu/" 
+    ALPHAFOLD_RESULTS_DIR_PART2 = ALPHAFOLD_WORKING_DIR / "output_gpu"
 
 #### Write Run File 
 
