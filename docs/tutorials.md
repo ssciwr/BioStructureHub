@@ -26,8 +26,6 @@ Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.u
 
 Choose Jupyter and start a new session. 
 
-
-
 ### Step 4: Prepare for AlphaFold Prediction 
 
 The first step of the AlphaFold prediction is a multi-sequence alignment (MSA). 
@@ -37,13 +35,15 @@ For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for
 ![Screenshot](images/tutorial/bwVisu_CPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
+Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
+
 Upload the notebooks in (link) by clicking on the upload button:
 
 ![Screenshot](images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left.
 
-Upload the alphafold parameters to a directory in your home, such as `/af3models`. 
+The alphafold parameters need to be uploaded as well. After registration as shown above, you will receive a download link (takes about three days). The parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your home, such as `/af3models`. 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
 
@@ -57,12 +57,12 @@ Open `Afold_Alignment_CPU.ipynb`.
 
 Add the directory with the alphafold parameters to `ALPHAFOLD_MODEL_DIR`: 
 
-    ALPHAFOLD_MODEL_DIR = "af3models" 
+    ALPHAFOLD_MODEL_DIR = Path.home() / "af3models"
 		  
 
 Decide where you want your working directory and output files to be: 
 
-    ALPHAFOLD_WORKING_DIR = Path("afold_test")
+    ALPHAFOLD_WORKING_DIR = Path.home() / "afold_test"
     ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
 
 These directories can be created by clicking on the folder icon on the top left:
@@ -88,10 +88,10 @@ Next, we need to tell the AlphaFold3 program what to do with the input file, whe
 
 Run the MSA prediction by executing the next cell: 
 
-    ! bash {ALPHAFOLD_RUN_PATH} 
+    os.system(f'bash {ALPHAFOLD_RUN_PATH}')
 		  
 
-This may take a few minutes, but eventually, you should see... 
+This will take about 5-10 minutes, but eventually, you should see... 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_MSA_done.png){: style="height:53px;width:379px"}
 
@@ -116,7 +116,7 @@ For the inference step we need a GPU, so we need to request a GPU node on bwVisu
 ![Screenshot](images/tutorial/Helix_GPU.png)
 <!--Cant I link this directly?-->
 
-The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
+The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
 
 ![Screenshot](images/tutorial/bwVisu_GPU.png)
 <!--{: style="height:500px;width:750px"}-->
@@ -124,19 +124,19 @@ The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in 
 Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
-
+- dependencies are missing
  Open `AFold_Diffusion_GPU.ipynb`.
 
 #### Set Environment Variables 
 
 Add the directory with the alphafold parameters to ALPHAFOLD_MODEL_DIR: 
 
-    ALPHAFOLD_MODEL_DIR = Path("af3models")
+    ALPHAFOLD_MODEL_DIR = Path.home() / "af3models"
 		  
 
 Link the output of the MSA prediction, and the project name given in the MSA input file 
 
-    ALPHAFOLD_WORKING_DIR = Path("afold_test")
+    ALPHAFOLD_WORKING_DIR = Path.home() / "afold_test"
     ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
 
 
@@ -156,7 +156,7 @@ Next, we need to tell the AlphaFold3 program what to do in the second part. Exec
 
 Execute the next cells to run the alignment job. Good luck!	 
 
-    ! bash {ALPHAFOLD_RUN_PATH}
+    os.system(f'bash {ALPHAFOLD_RUN_PATH}')
 
 This may take a few minutes, but eventually, you should see... 
 
@@ -178,6 +178,17 @@ The best model is presented in the output directory as well, with its structure 
 ### Step 8: Analyze your results
 
 Open the last notebook `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
+
+For this last notebook, you need to install a few dependencies into your environment. These dependencies are libraries that are used to analyze and visualize the output. The dependencies are installed in the Jupyter notebook in the first code cell:
+
+    %pip install biopython seaborn
+
+After installing the dependencies, you need to restart the Jupyter kernel so that Jupyter finds the newly installed packages. Click on the circular arrow in the top left of the Jupyter notebook toolbar.
+
+![Screenshot](images/tutorial/restart_kernel.png)
+{: style="width:268px"}
+
+After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as [Pymol](https://pymol.org/) or [ChimeraX](https://www.cgl.ucsf.edu/chimerax/). To visualize the pIDDT in "classic" AlphaFold colors, use [this](https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/) quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
