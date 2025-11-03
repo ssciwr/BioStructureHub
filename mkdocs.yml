@@ -1,10 +1,14 @@
 site_name: Bio-Structure Hub
+repo_url: https://github.com/ssciwr/BioStructureHub/
+
 
 
 #=======    Theme Settings   =====
 theme:
   name: material
   logo: images/Logoleiste_SSC_4c.png
+  icon:
+    repo: fontawesome/brands/github
   palette:
     # Light mode
     - scheme: default
@@ -13,6 +17,8 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
+
+
 
     # Dark mode
     - scheme: slate
@@ -40,7 +46,7 @@ nav:
   - Resources: resources.md
   - Tutorials: 
       - tutorials.md # add Boltz and Hexlix as well
-      #- tutorials2.md 
+      - tutorials2.md 
   - How to cite us: cite.md
   - Contact: contact.md
 
