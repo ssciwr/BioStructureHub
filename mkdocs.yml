@@ -45,8 +45,10 @@ nav:
   - Projects: projects.md
   - Resources: resources.md
   - Tutorials: 
-      - tutorials.md # add Boltz and Hexlix as well
-      - tutorials2.md 
+      - tutorials/tutorial_AF_bwVisu.md 
+      - tutorials/tutorial_Bindcraft_bwVisu.md
+      - tutorials/tutorial_Boltzgen_bwVisu.md
+      - tutorials/tutorial_RFDiffusion_bwVisu.md
   - How to cite us: cite.md
   - Contact: contact.md
 

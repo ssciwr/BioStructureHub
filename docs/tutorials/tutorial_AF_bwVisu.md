@@ -32,20 +32,20 @@ The first step of the AlphaFold prediction is a multi-sequence alignment (MSA).
 
 For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for the second step will be requested later. 
 
-![Screenshot](images/tutorial/bwVisu_CPU.png)
+![Screenshot](../images/tutorial/bwVisu_CPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
 Upload the notebooks in (link) by clicking on the upload button:
 
-![Screenshot](images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left.
 
 The alphafold parameters need to be uploaded as well. After registration as shown above, you will receive a download link (takes about three days). The parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your home, such as `/af3models`. 
 
-![Screenshot](images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
 
 
 
@@ -67,7 +67,7 @@ Decide where you want your working directory and output files to be:
 
 These directories can be created by clicking on the folder icon on the top left:
 
-![Screenshot](images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
 		  
 
 #### Prepare Input File 
@@ -82,7 +82,7 @@ Important parameters in the input file are the `name`, `sequence` and `id`, whic
 
 Next, we need to tell the AlphaFold3 program what to do with the input file, where to find the model weight parameters and where to write the output. Execute the next cell to write the run file that controls the execution. You don't need to worry about the parameters too much. They are prepared for you. Only change them if you know what you're doing. 
 
-![Screenshot](images/tutorial/bwVisu_Afold_MSA_input.png){: style="height:112px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_MSA_input.png){: style="height:112px;width:268px"}
 
 #### Run MSA Prediction 
 
@@ -93,13 +93,13 @@ Run the MSA prediction by executing the next cell:
 
 This will take about 5-10 minutes, but eventually, you should see... 
 
-![Screenshot](images/tutorial/bwVisu_Afold_MSA_done.png){: style="height:53px;width:379px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_MSA_done.png){: style="height:53px;width:379px"}
 
 #### Verify Output 
 
 In the output directory, there should be a second `.json` file in the `output/test` directory. This includes all the information from the input file and the results of the MSA. 
 
-![Screenshot](images/tutorial/bwVisu_Afold_json.png)
+![Screenshot](../images/tutorial/bwVisu_Afold_json.png)
 {: style="height:89px;width:268px"}
 
 
@@ -113,12 +113,12 @@ The second step of the AlphaFold prediction is the inference of the structure by
 
 For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at [https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes](https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes), or in the table below.
 
-![Screenshot](images/tutorial/Helix_GPU.png)
+![Screenshot](../images/tutorial/Helix_GPU.png)
 <!--Cant I link this directly?-->
 
 The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
 
-![Screenshot](images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
@@ -148,7 +148,7 @@ Decide where you want your output files to be:
 
 Next, we need to tell the AlphaFold3 program what to do in the second part. Execute the next cell to write the run file that controls the execution. You don't need to worry about the parameters too much. They are prepared for you. Only change them if you know what you're doing. 
 
-![Screenshot](images/tutorial/bwVisu_Afold_GPU_input.png)
+![Screenshot](../images/tutorial/bwVisu_Afold_GPU_input.png)
 {: style="height:159px;width:268px"}
 
 
@@ -160,14 +160,14 @@ Execute the next cells to run the alignment job. Good luck!
 
 This may take a few minutes, but eventually, you should see... 
 
-![Screenshot](images/tutorial/bwVisu_Afold_GPU_done.png)
+![Screenshot](../images/tutorial/bwVisu_Afold_GPU_done.png)
 {: style="height:55px;width:357px"}
 
 #### Verify Output
 
 You should see the AlphaFold output files:
 
-![Screenshot](images/tutorial/bwVisu_Afold_GPU_output.png)
+![Screenshot](../images/tutorial/bwVisu_Afold_GPU_output.png)
 {: style="height:335px;width:268px"}
 
 By default AlphaFold creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
@@ -185,7 +185,7 @@ For this last notebook, you need to install a few dependencies into your environ
 
 After installing the dependencies, you need to restart the Jupyter kernel so that Jupyter finds the newly installed packages. Click on the circular arrow in the top left of the Jupyter notebook toolbar.
 
-![Screenshot](images/tutorial/restart_kernel.png)
+![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
