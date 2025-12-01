@@ -1,5 +1,9 @@
-# Contact
+---
+hide:
+ - navigation
+---
 
+# Contact
 
 <div class="grid cards" markdown >
 

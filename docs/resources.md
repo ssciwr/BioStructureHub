@@ -23,6 +23,8 @@ Regarding cloud computing, we offer support and share best practices around the 
 
 Are you new to the world of bioinformatics and not sure where to start? Don't worry, we've got you covered! The EMBL-EBI offers an excellent resource for beginners with their online course ["Bioinformatics for the terrified"](https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/). This course provides broad overview of how computers are used in biology, covering the basics and beyond. It's the perfect starting point for anyone looking to dip their toes into the world of bioinformatics. 
 
+A great resource for virtual lectures and webinars is [TESS by the elixir network](https://tess.elixir-europe.org/materials). These free resources offer a great start into any topic in bioinformatics.
+
 ### 3D Structure Prediction
 For a light introduction to protein structure prediction, an overview on the history of AlphaFold and its first appearance in the CASP competition, and more, we recommend checking out this [video by Veritasium on Youtube](https://www.youtube.com/watch?v=P_fHJIYENdI). 
 

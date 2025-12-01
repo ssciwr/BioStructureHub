@@ -27,12 +27,15 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-
+ 
   features:
-    #- navigation.tabs
+    - navigation.tabs
+    - navigation.sections
     - navigation.indexes # removes empty index from navigation
+    - navigation.top
     - navigation.tracking
-    #- toc.integrate
+    - toc.integrate
+    #- toc.follow
 
 
 #=======    Website Navigation settings   =====
@@ -62,8 +65,8 @@ markdown_extensions:
 
 plugins:
   - blog:
-      archive: false
-      archive_toc: true
+      archive: true
+      archive_toc: false
       authors: false
       blog_toc: true
   - search
