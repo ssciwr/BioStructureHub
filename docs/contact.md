@@ -1,7 +1,27 @@
 # Contact
 
 
-Do not hesitate to get in touch with us! You can [send us an email](mailto:ssc-biostructurehub@uni-heidelberg.de) at ssc-biostructurehub@uni-heidelberg.de.
+<div class="grid cards" markdown >
+
+-   __Research Software Engineer__
+
+    ---
+    ![image_alt](images/zoom_IMG_20251021_153717.jpg){style="display:block;margin-left:auto;margin-right:auto;height:230.4px;width:129.6px"} 
+    
+    Christine Schulz
+
+-   __Research Assistant__
+
+    ---
+    ![image_alt](images/5e99915a.jpg){style="display:block;margin-left:auto;margin-right:auto;height:230.4px"}
+
+    Johannes Schmidt
+</div>
+
+
+Do not hesitate to get in touch with us! You can send us an email at:
+
+[ssc-biostructurehub@uni-heidelberg.de](mailto:ssc-biostructurehub@uni-heidelberg.de).
 
 
 We are located in the Mathematikon Bauteil A on the Neuenheimer Feld campus, INF 205 - Room 4/335.
