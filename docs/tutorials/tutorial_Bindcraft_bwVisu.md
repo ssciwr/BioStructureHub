@@ -27,7 +27,7 @@ Choose the Kernel Path to Bindcraft:
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks in (link) and the [PLD1.pdb](https://github.com/martinpacesa/BindCraft/blob/main/example/PDL1.pdb) file by clicking on the upload button:
+Upload the notebooks from [our github](https://github.com/ssciwr/BioStructureHub/tree/protein_design/notebooks) and the [PLD1.pdb](https://github.com/martinpacesa/BindCraft/blob/main/example/PDL1.pdb) file by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
