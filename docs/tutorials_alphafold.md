@@ -18,6 +18,8 @@ Each user needs to individually obtain the model weights for AlphaFold3. Downloa
 
 [https://forms.gle/svvpY4u2jsHEwWYS6](https://forms.gle/svvpY4u2jsHEwWYS6 ) 
 
+Note that this can take up to a few days!
+
 **Please note that your use of AlphaFold is subject to the terms and conditions outlined in the [AlphaFold Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). You are responsible for ensuring you comply with these terms.**
 
 ### Step 3: Connect to bwVisu and Start Jupyter 
@@ -37,13 +39,13 @@ For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks in (link) by clicking on the upload button:
+Upload the notebooks from our [github](https://github.com/ssciwr/BioStructureHub/tree/main/notebooks) by clicking on the upload button:
 
 ![Screenshot](images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left.
 
-The alphafold parameters need to be uploaded as well. After registration as shown above, you will receive a download link (takes about three days). The parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your home, such as `/af3models`. 
+The alphafold parameters need to be uploaded as well. The parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your home, such as `/af3models`. 
 
 ![Screenshot](images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
 
