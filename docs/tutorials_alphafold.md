@@ -126,7 +126,7 @@ The GPU is selected by "GPU Type". The memory of each GPU Type is specified in G
 Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
-- dependencies are missing
+
  Open `AFold_Diffusion_GPU.ipynb`.
 
 #### Set Environment Variables 

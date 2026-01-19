@@ -1,3 +1,8 @@
+---
+hide:
+ - navigation
+---
+
 # Welcome to the Bio-Structure Hub
 
 The Bio-Structure Hub is a subunit of the [Scientific Software Center](https://www.ssc.uni-heidelberg.de) at the University of Heidelberg and provides a variety of services and resources for researchers in the field of computational structural biology. 

@@ -1,3 +1,8 @@
+---
+hide:
+ - navigation
+---
+
 # How to cite us
 
 For any publication that includes structure predictions by the Bio-Structure Hub, please consider adding an acknowledgement statement along these lines:
