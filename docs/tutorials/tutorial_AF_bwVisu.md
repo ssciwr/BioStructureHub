@@ -10,7 +10,7 @@ To start, get access to bwVisu via bwForCluster Helix or SDS. For more informati
 
 [https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu](https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu) 
 
-For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](/contact) for support.
+For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](../contact.md) for support.
 
 ### Step 2: Obtain Model Weights from AlphaFold 
 
@@ -20,7 +20,9 @@ Each user needs to individually obtain the model weights for AlphaFold3. Downloa
 
 Note that this can take up to a few days!
 
-**Please note that your use of AlphaFold is subject to the terms and conditions outlined in the [AlphaFold Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). You are responsible for ensuring you comply with these terms.**
+!!! danger  "Legal Note"
+
+    Please note that your use of AlphaFold is subject to the terms and conditions outlined in the [AlphaFold Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). You are responsible for ensuring you comply with these terms.
 
 ### Step 3: Connect to bwVisu and Start Jupyter 
 
