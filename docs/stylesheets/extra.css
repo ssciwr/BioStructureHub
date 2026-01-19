@@ -9,9 +9,9 @@
 }
 
 .md-header__button.md-logo {
-    margin: 0;
+    margin: 1;
     padding: 1;
 }
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
-    height: 2.3rem;
+    height: 3.5rem;
 }
