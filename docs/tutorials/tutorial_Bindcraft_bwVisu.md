@@ -36,9 +36,17 @@ After the upload, you can see the notebooks in the file browser on the left.
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_input.png){: style="width:268px"}
 
 ### Step 3: Prepare Modules and Environments
-Load the GNU compiler module for fortran libraries, by clicking on the hexagon on the right and selecting compiler/gnu/11.3
-Open the notebook. Check if module list and lib dir works by executing the first cells.
-If the notebook was open before, restart Kernel.
+Load the GNU compiler module for fortran libraries, by clicking on the hexagon on the right and selecting compiler/gnu/11.3. You should see them as loaded modules like so:
+
+![Screenshot](../images/tutorial/bwVisu_Bindcraft_modules_loaded.png)
+{: style="width:378px"}
+
+In the notebook you can check the modules by checking the output of `! module list` which should look like that:
+
+![Screenshot](../images/tutorial/bwVisu_Bindcraft_modules_list.png)
+{: style="width:520px"}
+
+If you can see the modules in your module list at the top right, but not listed in the notebook, restart the kernel and execute all cells until this step again:
 
 ![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
