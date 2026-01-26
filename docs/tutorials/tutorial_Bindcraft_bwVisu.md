@@ -8,7 +8,7 @@ To start, get access to bwVisu via bwForCluster Helix or SDS. For more informati
 
 [https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu](https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu) 
 
-For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](/contact) for support.
+For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](../contact.md) for support.
 
 
 ### Step 2: Connect to bwVisu and Start Jupyter 
