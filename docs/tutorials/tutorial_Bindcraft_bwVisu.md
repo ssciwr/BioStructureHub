@@ -19,7 +19,7 @@ Choose Jupyter and start a new session.
 
 To use Bindcraft, we need to request a GPU core of type A40. 
 Choose the Kernel Path to Bindcraft:
-./mnt/sds-hd/sd25g005/bindcraft/share/jupyter/
+`/mnt/sds-hd/sd25g005/bindcraft/share/jupyter/`
 
 
 ![Screenshot](../images/tutorial/bwVisu_GPU.png)
@@ -53,4 +53,4 @@ If you can see the modules in your module list at the top right, but not listed 
 
 ### Step 4: Start the Calculation
 
-Now execute the cells in the notebook to start your Boltzgen run!
+Now execute the cells in the notebook to start your Bindcraft run!
