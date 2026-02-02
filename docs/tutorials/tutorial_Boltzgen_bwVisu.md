@@ -12,9 +12,9 @@ For technical questions regarding the high performance cluster, see [https://bw-
 
 ### Step 2: Start the calculation
 
-Request a GPU core of type A40. Choose the Kernel Path to Boltzen ./mnt/sds-hd/sd25g005/boltzgen/share/jupyter/
+Request a GPU core of type A40. Choose the Kernel Path to Boltzen `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/` [Contact us](/contact.md) for access to this shared directory.
 
-![Screenshot](../images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.

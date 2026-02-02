@@ -18,11 +18,9 @@ Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.u
 Choose Jupyter and start a new session.  
 
 To use Bindcraft, we need to request a GPU core of type A40. 
-Choose the Kernel Path to Bindcraft:
-`/mnt/sds-hd/sd25g005/bindcraft/share/jupyter/`
+Choose the Kernel Path to Bindcraft: `/mnt/sds-hd/sd25g005/bindcraft/share/jupyter/` [Contact us](/contact.md) for access to this shared directory.
 
-
-![Screenshot](../images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.

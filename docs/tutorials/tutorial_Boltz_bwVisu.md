@@ -34,12 +34,12 @@ For the inference step we need a GPU, so we need to request a GPU node on bwVisu
 ![Screenshot](../images/tutorial/Helix_GPU.png)
 <!--Cant I link this directly?-->
 
-The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
+The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
-![Screenshot](../images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
-Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
+You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](/contact.md) for access to this shared directory.
 
 ### Step 5: Set Up Your Diffusion Run Within the Notebook
 
@@ -47,12 +47,9 @@ Larger jobs (= longer sequences, more chains) require more memory. To access the
 
 #### Set Environment Variables 
 
-
 Link the output of the MSA prediction, and the project name given in the MSA input file 
 
     BOLTZ_WORKING_DIR = "boltz_test/"  
-
-
 
 #### Write Input File 
 
@@ -64,14 +61,18 @@ Important parameters in the input file are the `name`, `sequence` and `id`, as w
 
 Remember the name of your input file as it is needed for [the analysis](#step-6-analyze-your-results). <!--the input file name directs the output folders!-->
 
-#### Run Structure Prediction 
+#### Write Run File  
 
-Run the structure prediction by executing the next cell: 
+Next we need to write the `run file`, which loads all relevant modules and handles the Boltz `.yaml` file in a program call. You do not need to change these parameters. A full list is available [here](https://github.com/jwohlwend/boltz/blob/main/docs/prediction.md#options). Only change the parameters if you know what you are doing.
 
-    ! CUDA_VISIBLE_DEVICES=0 boltz predict {BOLTZ_WORKING_DIR}/input.yaml --write_full_pae --out_dir {BOLTZ_WORKING_DIR}
-		  
+#### Run the Prediction
 
-This may take a few minutes, but eventually, you should see... 
+Run the prediction by executing the next cell:
+
+    os.system(f'echo "Running file {BOLTZ_RUN_PATH}"')
+    os.system(f"bash {BOLTZ_RUN_PATH}")
+
+This may take a few minutes, but eventually, you should see (among other things)... 
 
 ![Screenshot](../images/tutorial/bwVisu_Boltz_done.png)
 

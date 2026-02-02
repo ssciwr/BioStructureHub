@@ -127,6 +127,7 @@ The GPU is selected by "GPU Type". The memory of each GPU Type is specified in G
 
 Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
+
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
 - dependencies are missing
  Open `AFold_Diffusion_GPU.ipynb`.
@@ -183,14 +184,10 @@ The best model is presented in the output directory as well, with its structure 
 
 Open the last notebook `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
-For this last notebook, you need to install a few dependencies into your environment. These dependencies are libraries that are used to analyze and visualize the output. The dependencies are installed in the Jupyter notebook in the first code cell:
+For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](/contact.md) for access to this shared directory.
 
-    %pip install biopython seaborn
-
-After installing the dependencies, you need to restart the Jupyter kernel so that Jupyter finds the newly installed packages. Click on the circular arrow in the top left of the Jupyter notebook toolbar.
-
-![Screenshot](../images/tutorial/restart_kernel.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
+<!--{: style="height:500px;width:750px"}-->
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
