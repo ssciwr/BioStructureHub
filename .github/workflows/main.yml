@@ -34,8 +34,8 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
     - name: Pre-cache matplotlib font (cross-platform)
-        run: |
-          python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
+      run: |
+        python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
     - name: Run AlphaFold3  Alignment notebook
       run: |
         cd notebooks
