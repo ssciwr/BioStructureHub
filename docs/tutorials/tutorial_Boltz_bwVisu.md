@@ -12,20 +12,18 @@ To start, get access to bwVisu via bwForCluster Helix or SDS. For more informati
 
 For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
 
+### Step 2: Prepare the Multisequence Alignment 
+
+The first step of the structure prediction is a multi-sequence alignment (MSA), which provides the basis for the prediction. Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. You can calculate the MSA locally using <a href="https://github.com/soedinglab/MMseqs2" target="_blank" rel="noopener">mmseqs2</a>. For this tutorial you can download the `example.a3m` file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
+
 ### Step 2: Connect to bwVisu and Start Jupyter 
 
 Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
 
 Choose Jupyter and start a new session. 
 
-### Step 3: Prepare the Multisequence Alignment 
 
-The first step of the structure prediction is a multi-sequence alignment (MSA). Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. For this example you can download the example.a3m file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
-
-![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
-{: style="width:268px"} 
-
-### Step 4: Prepare the Inference
+### Step 4: Prepare the Calculation
 
 Now we can use the Boltz model to run the inference and predict the structure.
 
@@ -40,6 +38,19 @@ The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in 
 <!--{: style="height:500px;width:750px"}-->
 
 You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+
+#### Upload the Notebook and Files
+
+Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
+
+![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+
+After the upload, you can see the notebooks in the file browser on the left.
+
+Use the file browser on the left to create a working directory, for example `boltz_test/`. Then upload the MSA example file `example.a3m` to your working directory.
+
+![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
+{: style="width:268px"} 
 
 ### Step 5: Set Up Your Diffusion Run Within the Notebook
 
