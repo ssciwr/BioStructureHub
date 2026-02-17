@@ -20,7 +20,7 @@ Choose Jupyter and start a new session.
 
 ### Step 3: Prepare the Multisequence Alignment 
 
-The first step of the structure prediction is a multi-sequence alignment (MSA). Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. 
+The first step of the structure prediction is a multi-sequence alignment (MSA). Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. For this example you can download the example.a3m file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
 
 ![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
 {: style="width:268px"} 
