@@ -1,14 +1,14 @@
 # RFDiffusion on bwVisu
 
-Welcome to the [RFDiffusion](https://github.com/RosettaCommons/RFdiffusion) Tutorial for bwVisu! 
+Welcome to the <a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank" rel="noopener">RFDiffusion</a> Tutorial for bwVisu! 
 
 ### Step 1: Get access to bwVisu 
 
 To start, get access to bwVisu via bwForCluster Helix or SDS. For more information, visit 
 
-[https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu](https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu) 
+<a href="https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu" target="_blank" rel="noopener">https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu</a>
 
-For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](/contact.md) for support.
+For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
 
 
 ### Step 2: Connect to bwVisu and Start Jupyter 
@@ -22,7 +22,7 @@ Choose Jupyter and start a new session. To use RFDiffusion, we need to request a
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks from our [github](https://github.com/ssciwr/BioStructureHub/tree/main/notebooks) by clicking on the upload button:
+Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
@@ -44,4 +44,4 @@ Execute the steps in the notebook to start the calculation. You will see the fil
 
 ![Screenshot](../images/tutorial/bwVisu_RFD_files.png){: style="width:268px"}
 
-You can find your results in the `outputs` directory. For more information, please refer to the [RFDiffusion documentation](https://github.com/RosettaCommons/RFdiffusion) and the [original publication](https://www.nature.com/articles/s41586-023-06415-8).
+You can find your results in the `outputs` directory. For more information, please refer to the <a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank" rel="noopener">RFDiffusion documentation</a> and the <a href="https://www.nature.com/articles/s41586-023-06415-8" target="_blank" rel="noopener">original publication</a>.

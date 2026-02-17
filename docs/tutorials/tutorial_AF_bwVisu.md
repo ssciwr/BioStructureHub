@@ -8,25 +8,25 @@ This tutorial will guide you through running AlphaFold on bwVisu. Please follow 
 
 To start, get access to bwVisu via bwForCluster Helix or SDS. For more information, visit 
 
-[https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu](https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu) 
+<a href="https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu" target="_blank" rel="noopener">https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu</a>
 
-For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](../contact.md) for support.
+For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
 
 ### Step 2: Obtain Model Weights from AlphaFold 
 
 Each user needs to individually obtain the model weights for AlphaFold3. Download the model weights from AlphaFold using this form:  
 
-[https://forms.gle/svvpY4u2jsHEwWYS6](https://forms.gle/svvpY4u2jsHEwWYS6 ) 
+<a href="https://forms.gle/svvpY4u2jsHEwWYS6" target="_blank" rel="noopener">https://forms.gle/svvpY4u2jsHEwWYS6</a> 
 
 Note that this can take up to a few days!
 
 !!! danger  "Legal Note"
 
-    Please note that your use of AlphaFold is subject to the terms and conditions outlined in the [AlphaFold Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). You are responsible for ensuring you comply with these terms.
+    Please note that your use of AlphaFold is subject to the terms and conditions outlined in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md" target="_blank" rel="noopener">https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md</a>. You are responsible for ensuring you comply with these terms.
 
 ### Step 3: Connect to bwVisu and Start Jupyter 
 
-Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.uni-heidelberg.de/ ) and log in with your credentials and one-time password. Please note that you need to be connected to Heidelberg University's VPN if you are connecting from outside the campus.
+Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. Please note that you need to be connected to Heidelberg University's VPN if you are connecting from outside the campus.
 
 Choose Jupyter and start a new session. 
 
@@ -41,7 +41,7 @@ For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks from our [github](https://github.com/ssciwr/BioStructureHub/tree/main/notebooks) by clicking on the upload button:
+Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
@@ -76,9 +76,9 @@ These directories can be created by clicking on the folder icon on the top left:
 
 #### Prepare Input File 
 
-First we prepare the `.json` input file that will tell AlphaFold what to predict. An introduction to the json file format can be found [here](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730).
+First we prepare the `.json` input file that will tell AlphaFold what to predict. An introduction to the json file format can be found <a href="https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730" target="_blank" rel="noopener">here</a>.
 
-More information and examples on how these files are structured can be found in the [AlphaFold3 github](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure), with example input files [here](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example). 
+More information and examples on how these files are structured can be found in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure" target="_blank" rel="noopener">AlphaFold3 github</a>, with example input files <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example" target="_blank" rel="noopener">here</a>. 
 
 Important parameters in the input file are the `name`, `sequence` and `id`, which labels the chain ID. Upon executing this cell, the input file will be written to your working directory. Remember the `name` as it is needed later for the [diffusion run](#step-7-set-up-your-diffusion-run-within-the-notebook). 
 
@@ -115,7 +115,8 @@ You can now close this interactive session session on bwVisu, as the CPU is no l
 
 The second step of the AlphaFold prediction is the inference of the structure by the model.
 
-For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at [https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes](https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes), or in the table below.
+For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a> , or in the table below.
+
 
 ![Screenshot](../images/tutorial/Helix_GPU.png)
 <!--Cant I link this directly?-->
@@ -129,8 +130,7 @@ Larger jobs (= longer sequences, more chains) require more memory. To access the
 
 
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
-- dependencies are missing
- Open `AFold_Diffusion_GPU.ipynb`.
+Open `AFold_Diffusion_GPU.ipynb`.
 
 #### Set Environment Variables 
 
@@ -178,18 +178,21 @@ You should see the AlphaFold output files:
 By default AlphaFold creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
 The best model is presented in the output directory as well, with its structure file and confidence descriptions. The latter are needed to judge the quality of the prediction.
 
-**Please note that you must ensure your use and distribution of the AlphaFold outputs comply with the [Output Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md).**
+
+!!! danger  "Legal Note"
+
+    Please note that you must ensure your use and distribution of the AlphaFold outputs comply with the <a href="https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md" target="_blank" rel="noopener">Output Terms of Use</a>.
 
 ### Step 8: Analyze your results
 
 Open the last notebook `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
-For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](/contact.md) for access to this shared directory.
+For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
-To visualize your predicted structures, download them to your computer and open the files with programs such as [Pymol](https://pymol.org/) or [ChimeraX](https://www.cgl.ucsf.edu/chimerax/). To visualize the pIDDT in "classic" AlphaFold colors, use [this](https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/) quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
+To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 

@@ -6,9 +6,9 @@ Welcome to the Bindcraft Tutorial for bwVisu!
 
 To start, get access to bwVisu via bwForCluster Helix or SDS. For more information, visit 
 
-[https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu](https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu) 
+<a href="https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu" target="_blank" rel="noopener">https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu</a>
 
-For technical questions regarding the high performance cluster, see [https://bw-support.scc.kit.edu](https://bw-support.scc.kit.edu). Feel free to [contact us](../contact.md) for support.
+For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
 
 
 ### Step 2: Connect to bwVisu and Start Jupyter 
@@ -18,14 +18,14 @@ Go to [https://bwvisu.bwservices.uni-heidelberg.de/](https://bwvisu.bwservices.u
 Choose Jupyter and start a new session.  
 
 To use Bindcraft, we need to request a GPU core of type A40. 
-Choose the Kernel Path to Bindcraft: `/mnt/sds-hd/sd25g005/bindcraft/share/jupyter/` [Contact us](/contact.md) for access to this shared directory.
+Choose the Kernel Path to Bindcraft: `/mnt/sds-hd/sd25g005/bindcraft/share/jupyter/` [Contact us](../contact.md) for access to this shared directory.
 
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks from [our github](https://github.com/ssciwr/BioStructureHub/tree/protein_design/notebooks) and the [PLD1.pdb](https://github.com/martinpacesa/BindCraft/blob/main/example/PDL1.pdb) file by clicking on the upload button:
+Upload the notebooks from <a href="https://github.com/ssciwr/BioStructureHub/tree/protein_design/notebooks" target="_blank" rel="noopener">our github</a> and the <a href="https://github.com/martinpacesa/BindCraft/blob/main/example/PDL1.pdb" target="_blank" rel="noopener">PDL1.pdb</a> file by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
@@ -34,10 +34,12 @@ After the upload, you can see the notebooks in the file browser on the left.
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_input.png){: style="width:268px"}
 
 ### Step 3: Prepare Modules and Environments
-Load the GNU compiler module for fortran libraries, by clicking on the hexagon on the right and selecting compiler/gnu/11.3. You should see them as loaded modules like so:
+Load the GNU compiler module for fortran libraries, by clicking on the hexagon on the right and selecting `compiler/gnu/11.3`. You should see them as loaded modules like so:
 
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_modules_loaded.png)
 {: style="width:378px"}
+
+### Step 4: Open the Notebook
 
 In the notebook you can check the modules by checking the output of `! module list` which should look like that:
 
@@ -49,6 +51,6 @@ If you can see the modules in your module list at the top right, but not listed 
 ![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
 
-### Step 4: Start the Calculation
+### Step 5: Start the Calculation
 
 Now execute the cells in the notebook to start your Bindcraft run!
