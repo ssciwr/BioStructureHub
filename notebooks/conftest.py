@@ -1,17 +1,15 @@
 from pathlib import Path
 import shutil
-# import os
 
-# os.environ["HOME"] = os.getcwd()
+NOTEBOOKS_DIR = Path(__file__).resolve().parent
 
-
-ALPHAFOLD_MODEL_DIR = Path.home() / "af3models"
-ALPHAFOLD_WORKING_DIR = Path.home() / "afold_test"  # must be created by user
+ALPHAFOLD_MODEL_DIR = NOTEBOOKS_DIR / "af3models"
+ALPHAFOLD_WORKING_DIR = NOTEBOOKS_DIR / "afold_test"  # must be created by user
 ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
-BOLTZ_WORKING_DIR = Path.home() / "boltz_test"  # must be created by user
-BOLTZGEN_WORKING_DIR = Path.home() / "protein_design_w_Boltzgen"  # created by user
-RFDIFFUSION_WORKING_DIR = Path.home() / "protein_design_RFDiffusion"
-BINDCRAFT_WORKING_DIR = Path.home() / "protein_design_w_Bindcraft"
+BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"  # must be created by user
+BOLTZGEN_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Boltzgen"  # created by user
+RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_RFDiffusion"
+BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"
 
 
 def pytest_sessionstart(session):
@@ -20,7 +18,7 @@ def pytest_sessionstart(session):
     before performing collection and entering the run test loop.
     """
     ALPHAFOLD_MODEL_DIR.mkdir(exist_ok=True)
-    ALPHAFOLD_WORKING_DIR.mkdir(exist_ok=True)
+    # ALPHAFOLD_WORKING_DIR.mkdir(exist_ok=True)
     ALPHAFOLD_RESULTS_DIR_PART1.mkdir(exist_ok=True)
 
     BOLTZ_WORKING_DIR.mkdir(exist_ok=True)

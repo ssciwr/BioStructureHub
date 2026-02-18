@@ -31,7 +31,7 @@ After the upload, you can see the notebooks in the file browser on the left.
 
 
 ### Step 3: Prepare Modules and Environments
-Load the RFDiffusion module by clicking on the hexagon on the right and selecting `rfdiffusion`.
+Load the RFDiffusion module by clicking on the hexagon on the right and selecting `bio/rfdiffusion`.
 Open the notebook. Check if module list works by executing the first cells.
 If the notebook was open before, restart the kernel.
 
