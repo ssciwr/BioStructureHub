@@ -16,7 +16,7 @@ For technical questions regarding the high performance cluster, see <a href="htt
 
 The first step of the structure prediction is a multi-sequence alignment (MSA), which provides the basis for the prediction. Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. You can calculate the MSA locally using <a href="https://github.com/soedinglab/MMseqs2" target="_blank" rel="noopener">mmseqs2</a>. For this tutorial you can download the `example.a3m` file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
 
-### Step 2: Connect to bwVisu and Start Jupyter 
+### Step 3: Connect to bwVisu and Start Jupyter 
 
 Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
 

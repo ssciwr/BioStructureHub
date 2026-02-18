@@ -28,7 +28,9 @@ Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub
 
 After the upload, you can see the notebooks in the file browser on the left.
 
+Create a working directory 
 
+    RFDIFFUSION_WORKING_DIR = "protein_design_RFDiffusion"  
 
 ### Step 3: Prepare Modules and Environments
 Load the RFDiffusion module by clicking on the hexagon on the right and selecting `bio/rfdiffusion`.
@@ -37,6 +39,8 @@ If the notebook was open before, restart the kernel.
 
 ![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
+
+
 
 ### Step 4: Start the Calculation
 
