@@ -2,7 +2,7 @@
 
 Welcome to the Boltz-2 Tutorial for bwVisu!  
 
-This tutorial will guide you through running <a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz-2</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+<a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz-2</a> is an open-source biomolecular foundation model to predict 3D structures of biomolecular complexes and binding affinities. This tutorial will guide you through running Boltz-2 on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
 ### Step 1: Get access to bwVisu 
 
@@ -51,7 +51,7 @@ After the upload, you can see the notebooks in the file browser on the left:
 ![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
 {: style="width:268px"} 
 
-### Step 5: Open the Notebook and Start the Tutorial
+### Step 5: Open the Notebook and Start the Calculation
 
  Open `Boltz_input.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 

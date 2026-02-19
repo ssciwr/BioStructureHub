@@ -2,7 +2,7 @@
 
 Welcome to the RFDifusion Tutorial on bwVisu!
 
-This tutorial will guide you through running <a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank" rel="noopener">RFDiffusion</a> in bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+<a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank" rel="noopener">RFDiffusion</a> is an open-source method for structure generation of proteins, peptides and antibodies. This tutorial will guide you through running RFDiffusion on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
 ### Step 1: Get access to bwVisu 
 

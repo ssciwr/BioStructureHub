@@ -2,7 +2,7 @@
 
 Welcome to the Boltzgen Tutorial for bwVisu!  
 
-This tutorial will guide you through running <a href="https://github.com/HannesStark/boltzgen" target="_blank" rel="noopener">Boltzgen</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+<a href="https://github.com/HannesStark/boltzgen" target="_blank" rel="noopener">Boltzgen</a> is an open-source model for structure generation of proteins, peptides and antibodies. This tutorial will guide you through running Boltzgen on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
 
 ### Step 1: Get access to bwVisu 

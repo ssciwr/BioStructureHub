@@ -2,7 +2,7 @@
 
 Welcome to the BindCraft Tutorial for bwVisu!  
 
-This tutorial will guide you through running <a href="https://github.com/martinpacesa/BindCraft" target="_blank" rel="noopener">BindCraft</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+<a href="https://github.com/martinpacesa/BindCraft" target="_blank" rel="noopener">BindCraft</a> is an open-source binder design pipeline to generate proteins, peptides and antibodies. This tutorial will guide you through running BindCraft on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
 ### Step 1: Get access to bwVisu 
 
@@ -49,7 +49,7 @@ After the upload, you can see the notebooks in the file browser on the left.
 
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_input.png){: style="width:268px"}
 
-### Step 3: Prepare Modules and Environments
+### Step 4: Prepare Environments and Start the Calculation
 Load the GNU compiler module for fortran libraries, by clicking on the hexagon on the right and selecting `compiler/gnu/11.3`. You should see them as loaded modules like so:
 
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_modules_loaded.png)
@@ -68,8 +68,6 @@ If you can see the modules in your module list at the top right, but not listed 
 
 ![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
-
-### Step 5: Start the Calculation
 
 Now execute the other cells in the notebook to start your BindCraft run!
 
