@@ -1,8 +1,10 @@
-# AlphaFold3 on bwVisu
+# AlphaFold 3 on bwVisu
 
 Welcome to the AlphaFold Tutorial for bwVisu! 
 
-This tutorial will guide you through running AlphaFold on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to contact us!
+This tutorial will guide you through running <a href="https://github.com/google-deepmind/alphafold3" target="_blank" rel="noopener">AlphaFold 3</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+
+## Preparation
 
 ### Step 1: Get access to bwVisu 
 
@@ -11,6 +13,8 @@ To start, get access to bwVisu via bwForCluster Helix or SDS. For more informati
 <a href="https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu" target="_blank" rel="noopener">https://www.urz.uni-heidelberg.de/en/service-catalogue/software-and-applications/bwvisu</a>
 
 For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
+
+
 
 ### Step 2: Obtain Model Weights from AlphaFold 
 
@@ -24,80 +28,48 @@ Note that this can take up to a few days!
 
     Please note that your use of AlphaFold is subject to the terms and conditions outlined in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md" target="_blank" rel="noopener">https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md</a>. You are responsible for ensuring you comply with these terms.
 
+## Part 1: Alignment
+
 ### Step 3: Connect to bwVisu and Start Jupyter 
 
-Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. Please note that you need to be connected to Heidelberg University's VPN if you are connecting from outside the campus.
+Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
 
-Choose Jupyter and start a new session. 
+Choose Jupyter and start a new session. Now you can select the resources you need.
 
-### Step 4: Prepare for AlphaFold Prediction 
-
-The first step of the AlphaFold prediction is a multi-sequence alignment (MSA). 
-
-For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for the second step will be requested later. 
+The first step of the AlphaFold prediction is a multi-sequence alignment (MSA). For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for the second step will be requested later. 
 
 ![Screenshot](../images/tutorial/bwVisu_CPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
+### Step 4: Set a Working Directory and Upload Files
+
+First we need to define a working directory. That can be your `home` or any directory you create. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
+
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+
+Next all required files need to be uploaded. This includes the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> and the AlphaFold parameters. You can upload these files by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
-After the upload, you can see the notebooks in the file browser on the left.
-
-The alphafold parameters need to be uploaded as well. The parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your home, such as `/af3models`. 
+Note that the AlphaFold parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your working directory, such as `/af3models`. 
 
 ![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
 
+After the upload, you can see your files in the file browser on the left.
+
+### Step 5: Start the Alinment 
+
+Open `Afold_Alignment_CPU.ipynb` and execute the cells in the notebook to start your AlphaFold run!
 
 
-### Step 5: Set Up Your MSA Within the Notebook 
+#### Verify Input
 
-Open `Afold_Alignment_CPU.ipynb`.
-
-#### Set Environment Variables 
-
-Add the directory with the alphafold parameters to `ALPHAFOLD_MODEL_DIR`: 
-
-    ALPHAFOLD_MODEL_DIR = Path.home() / "af3models"
-		  
-
-Decide where you want your working directory and output files to be: 
-
-    ALPHAFOLD_WORKING_DIR = Path.home() / "afold_test"
-    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
-
-These directories can be created by clicking on the folder icon on the top left:
-
-![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
-		  
-
-#### Prepare Input File 
-
-First we prepare the `.json` input file that will tell AlphaFold what to predict. An introduction to the json file format can be found <a href="https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/#h2-81f8002b67730" target="_blank" rel="noopener">here</a>.
-
-More information and examples on how these files are structured can be found in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure" target="_blank" rel="noopener">AlphaFold3 github</a>, with example input files <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#full-example" target="_blank" rel="noopener">here</a>. 
-
-Important parameters in the input file are the `name`, `sequence` and `id`, which labels the chain ID. Upon executing this cell, the input file will be written to your working directory. Remember the `name` as it is needed later for the [diffusion run](#step-7-set-up-your-diffusion-run-within-the-notebook). 
-
-#### Write Run File 
-
-Next, we need to tell the AlphaFold3 program what to do with the input file, where to find the model weight parameters and where to write the output. Execute the next cell to write the run file that controls the execution. You don't need to worry about the parameters too much. They are prepared for you. Only change them if you know what you're doing. 
+Before starting your AlphaFold 3 alignment you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_Afold_MSA_input.png){: style="height:112px;width:268px"}
 
-#### Run MSA Prediction 
-
-Run the MSA prediction by executing the next cell: 
-
-    os.system(f'bash {ALPHAFOLD_RUN_PATH}')
-		  
-
-This will take about 5-10 minutes, but eventually, you should see... 
-
-![Screenshot](../images/tutorial/bwVisu_Afold_MSA_done.png){: style="height:53px;width:379px"}
 
 #### Verify Output 
 
@@ -111,62 +83,36 @@ You can now close this interactive session session on bwVisu, as the CPU is no l
 
  
 
-### Step 6: Prepare the Inference
+## Part 2: Inference
 
-The second step of the AlphaFold prediction is the inference of the structure by the model.
+### Step 6: Start a Second Jupyter Session
 
-For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a> , or in the table below.
+The second step of the AlphaFold prediction is the inference of the structure by the model, and it requires a GPU. Therefore we need another Jupyter session, where we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a> , or in the table below.
 
 
 ![Screenshot](../images/tutorial/Helix_GPU.png)
 <!--Cant I link this directly?-->
 
-The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs.
+The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
 ![Screenshot](../images/tutorial/bwVisu_GPU.png)
 <!--{: style="height:500px;width:750px"}-->
 
-Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
+Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
 ### Step 7: Set Up Your Diffusion Run Within the Notebook
-Open `AFold_Diffusion_GPU.ipynb`.
-
-#### Set Environment Variables 
-
-Add the directory with the alphafold parameters to ALPHAFOLD_MODEL_DIR: 
-
-    ALPHAFOLD_MODEL_DIR = Path.home() / "af3models"
-		  
-
-Link the output of the MSA prediction, and the project name given in the MSA input file 
-
-    ALPHAFOLD_WORKING_DIR = Path.home() / "afold_test"
-    ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
+Open `AFold_Diffusion_GPU.ipynb`. We will use the same directories that you created earlier. Make sure to use the exact same names for directories as in `Afold_Alignment_CPU.ipynb`. 
 
 
-Decide where you want your output files to be: 
+Execute the cells in the notebook to continue your AlphaFold run!
 
-    ALPHAFOLD_RESULTS_DIR_PART2 = ALPHAFOLD_WORKING_DIR / "output_gpu"
+#### Verify Input 
 
-#### Write Run File 
-
-Next, we need to tell the AlphaFold3 program what to do in the second part. Execute the next cell to write the run file that controls the execution. You don't need to worry about the parameters too much. They are prepared for you. Only change them if you know what you're doing. 
+Before starting your AlphaFold 3 diffusion you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_Afold_GPU_input.png)
 {: style="height:159px;width:268px"}
-
-
-#### Run the structure prediction 
-
-Execute the next cells to run the alignment job. Good luck!	 
-
-    os.system(f'bash {ALPHAFOLD_RUN_PATH}')
-
-This may take a few minutes, but eventually, you should see... 
-
-![Screenshot](../images/tutorial/bwVisu_Afold_GPU_done.png)
-{: style="height:55px;width:357px"}
 
 #### Verify Output
 
@@ -183,16 +129,33 @@ The best model is presented in the output directory as well, with its structure 
 
     Please note that you must ensure your use and distribution of the AlphaFold outputs comply with the <a href="https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md" target="_blank" rel="noopener">Output Terms of Use</a>.
 
-### Step 8: Analyze your results
+## Part 3: Analysis
 
-Open the last notebook `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
+### Step 8: Start another Jupyter Session
 
-For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+You can use `Afold_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
+
+For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Start a new JupyterLab session and define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
+
+Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
+
+### Step 9: Analyze your results
+
+Open `Afold_Confidence_Levels.ipynb` and select the `afold3` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
+
+![Screenshot](../images/tutorial/bwVisu_Afold_kernel.png){: style="width:232px"} 
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
+If you need more assistance with the analysis, feel free to [contact us](../contact.md).
+
+### References
+
+<a href="https://www.nature.com/articles/s41586-024-07487-w" target="_blank" rel="noopener">https://www.nature.com/articles/s41586-024-07487-w</a>
+
+<a href="https://github.com/google-deepmind/alphafold3" target="_blank" rel="noopener">https://github.com/google-deepmind/alphafold3</a>

@@ -1,8 +1,8 @@
-# Boltz2 on bwVisu
+# Boltz-2 on bwVisu
 
-Welcome to the Boltz Tutorial for bwVisu! 
+Welcome to the Boltz-2 Tutorial for bwVisu!  
 
-This tutorial will guide you through running Boltz on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to contact us!
+This tutorial will guide you through running <a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz-2</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
 ### Step 1: Get access to bwVisu 
 
@@ -20,12 +20,7 @@ The first step of the structure prediction is a multi-sequence alignment (MSA), 
 
 Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
 
-Choose Jupyter and start a new session. 
-
-
-### Step 4: Prepare the Calculation
-
-Now we can use the Boltz model to run the inference and predict the structure.
+Choose Jupyter and start a new session. Now you can select the resources you need.
 
 For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a>, or in the table below.
 
@@ -34,58 +29,42 @@ For the inference step we need a GPU, so we need to request a GPU node on bwVisu
 
 The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
+You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
 
-You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-#### Upload the Notebook and Files
+### Step 4: Set a Working Directory and Upload Files
 
-Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
+Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
+
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+
+Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook and the `example.a3m` file by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
-After the upload, you can see the notebooks in the file browser on the left.
-
-Use the file browser on the left to create a working directory, for example `boltz_test/`. Then upload the MSA example file `example.a3m` to your working directory.
+After the upload, you can see the notebooks in the file browser on the left:
 
 ![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
 {: style="width:268px"} 
 
-### Step 5: Set Up Your Diffusion Run Within the Notebook
+### Step 5: Open the Notebook and Start the Tutorial
 
- Open `Boltz_input.ipynb`. 
+ Open `Boltz_input.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
-#### Set Environment Variables 
+ ![Screenshot](../images/tutorial/bwVisu_Boltz_kernel.png){: style="width:232px"} 
 
-Link the output of the MSA prediction, and the project name given in the MSA input file 
+Now execute the cells in the notebook to start your Boltz run!
 
-    BOLTZ_WORKING_DIR = "boltz_test/"  
+#### Verify Input
 
-#### Write Input File 
+Before starting your Boltz prediction you should see the following files in your working directory:
 
-First we prepare the `.yaml` input file that will be tell Boltz what to predict. 
-
-More information and examples on how these files are structured can be found in the <a href="https://github.com/jwohlwend/boltz/blob/main/docs/prediction.md#yaml-format" target="_blank" rel="noopener">Boltz github</a>.
-
-Important parameters in the input file are the `name`, `sequence` and `id`, as well as the `msa` path that needs to point to the precalculated MSA. Upon executing this cell, the input file will be written to your working directory. 
-
-Remember the name of your input file as it is needed for [the analysis](#step-6-analyze-your-results). 
-
-#### Write Run File  
-
-Next we need to write the `run file`, which loads all relevant modules and handles the Boltz `.yaml` file in a program call. You do not need to change these parameters. A full list is available <a href="https://github.com/jwohlwend/boltz/blob/main/docs/prediction.md#options" target="_blank" rel="noopener">here</a>. Only change the parameters if you know what you are doing.
-
-#### Run the Prediction
-
-Run the prediction by executing the next cell:
-
-    os.system(f'echo "Running file {BOLTZ_RUN_PATH}"')
-    os.system(f"bash {BOLTZ_RUN_PATH}")
-
-This may take a few minutes, but eventually, you should see (among other things)... 
-
-![Screenshot](../images/tutorial/bwVisu_Boltz_done.png)
+![Screenshot](../images/tutorial/bwVisu_Boltz_input.png)
+{: style="width:268px"}
 
 #### Verify Output 
 
@@ -99,6 +78,14 @@ In the output directory, there should be multiple files. The .cif file includes 
 
 Open the second notebook called `Boltz_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
-To find the files, you need the name of the input file of the Boltz run. In this example we used `input.yaml`, so the directory structure `input` are automatically created.
+To find the files, you need the name of the input file of the Boltz run and your working directory. In this example we used `input_file.yaml`, so the directory structure `input_file` is automatically created.
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
+
+If you need more assistance with the analysis, feel free to [contact us](../contact.md).
+
+### References
+
+<a href="https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1" target="_blank" rel="noopener">https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1</a>
+
+<a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">https://github.com/jwohlwend/boltz</a>
