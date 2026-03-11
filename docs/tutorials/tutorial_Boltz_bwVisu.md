@@ -29,7 +29,7 @@ For the inference step we need a GPU, so we need to request a GPU node on bwVisu
 
 The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
-You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltz/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
 <!--{: style="height:500px;width:750px"}-->
