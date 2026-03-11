@@ -28,5 +28,7 @@ jobs:
           path: .cache 
           restore-keys: |
             mkdocs-material-${{ env.cache_id }}-
-      - run: pip install mkdocs-material==9.6.12 
+      - run: |
+            pip install uv
+             uv pip install --system --no-cache-dir -r mkdocs-requirements.txt
       - run: mkdocs gh-deploy --force
