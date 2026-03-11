@@ -64,7 +64,7 @@ In the notebook you can check the modules by checking the output of `! module li
 ![Screenshot](../images/tutorial/bwVisu_Bindcraft_modules_list.png)
 {: style="width:520px"}
 
-If you can see the modules in your module list at the top right, but not listed in the notebook, restart the kernel and execute all cells until this step again:
+If you can see the modules in your module list at the top left, but not listed in the notebook, restart the kernel and execute all cells until this step again:
 
 ![Screenshot](../images/tutorial/restart_kernel.png)
 {: style="width:268px"}
