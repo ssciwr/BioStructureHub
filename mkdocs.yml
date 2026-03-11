@@ -7,6 +7,7 @@ repo_url: https://github.com/ssciwr/BioStructureHub/
 theme:
   name: material
   logo: images/Logoleiste_SSC_4c.png
+  favicon: images/favicon.png
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -34,8 +35,7 @@ theme:
     - navigation.indexes # removes empty index from navigation
     - navigation.top
     - navigation.tracking
-    - toc.integrate
-    #- toc.follow
+    #- toc.integrate
 
 
 #=======    Website Navigation settings   =====
@@ -44,11 +44,20 @@ nav:
   - About: about.md
   - News:
     - blog/index.md
-  - Services: services.md
+  - What we offer: 
+    - services/service.md
+    - services/collab.md
+    - services/teaching.md
   - Projects: projects.md
-  - Resources: resources.md
+  - Resources: 
+    - resources/methods.md
+    - resources/learning.md
   - Tutorials: 
-      - tutorials_alphafold.md 
+    - tutorials/tutorial_AF_bwVisu.md 
+    - tutorials/tutorial_Bindcraft_bwVisu.md
+    - tutorials/tutorial_Boltz_bwVisu.md
+    - tutorials/tutorial_Boltzgen_bwVisu.md
+    - tutorials/tutorial_RFDiffusion_bwVisu.md
   - How to cite us: cite.md
   - Contact: contact.md
 
@@ -56,7 +65,9 @@ extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
-
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - attr_list
   - md_in_html
   - pymdownx.snippets:
@@ -70,3 +81,4 @@ plugins:
       authors: false
       blog_toc: true
   - search
+  - callouts

@@ -1,5 +1,6 @@
 mkdocs
 mkdocs-material
+mkdocs-callouts
 nbval
 pre-commit
 pytest
