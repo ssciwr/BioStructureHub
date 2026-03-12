@@ -38,12 +38,11 @@ jobs:
         python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
     - name: Run AlphaFold3  Alignment notebook
       run: |
-        cd notebooks
-        python -m pytest --nbval AFold_Alignment_CPU.ipynb
+        python -m pytest --nbval notebooks/AFold_Alignment_CPU.ipynb tests/afold_alignmnent_output.py
     - name: Run AlphaFold3 Inference notebook
       run: |
         cd notebooks
-        python -m pytest --nbval AFold_Diffusion_GPU.ipynb
+        python -m pytest --nbval notebooks/AFold_Diffusion_GPU.ipynb tests/afold_diffusion_output.py
     - name: Run AlphaFold3 Analysis notebook
       run: |  
         cd notebooks
