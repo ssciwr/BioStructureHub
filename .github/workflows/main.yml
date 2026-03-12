@@ -41,12 +41,11 @@ jobs:
         python -m pytest --nbval notebooks/AFold_Alignment_CPU.ipynb tests/afold_alignmnent_output.py
     - name: Run AlphaFold3 Inference notebook
       run: |
-        cd notebooks
         python -m pytest --nbval notebooks/AFold_Diffusion_GPU.ipynb tests/afold_diffusion_output.py
     - name: Run AlphaFold3 Analysis notebook
       run: |  
-        cd notebooks
-        python -m pytest --nbval AFold_Confidence_Levels.ipynb
+        python -m pytest tests/afold_prepare_analysis.py
+        python -m pytest --nbval notebooks/AFold_Confidence_Levels.ipynb
 
     - name: Run Bindcraft notebook
       run: |  

@@ -4,12 +4,12 @@ import shutil
 NOTEBOOKS_DIR = Path(__file__).resolve().parent
 
 ALPHAFOLD_MODEL_DIR = NOTEBOOKS_DIR / "af3models"
-ALPHAFOLD_WORKING_DIR = NOTEBOOKS_DIR / "afold_test"  # must be created by user
+ALPHAFOLD_WORKING_DIR = NOTEBOOKS_DIR / "afold_test"
 ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
-BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"  # works
-BOLTZGEN_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Boltzgen"  # try
-RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_RFDiffusion"  # works
-BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"  # works
+BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"
+BOLTZGEN_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Boltzgen"
+RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_RFDiffusion"
+BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"
 
 
 def pytest_sessionstart(session):
@@ -18,7 +18,7 @@ def pytest_sessionstart(session):
     before performing collection and entering the run test loop.
     """
     ALPHAFOLD_MODEL_DIR.mkdir(exist_ok=True)
-    # ALPHAFOLD_WORKING_DIR.mkdir(exist_ok=True)
+    ALPHAFOLD_WORKING_DIR.mkdir(exist_ok=True)
     ALPHAFOLD_RESULTS_DIR_PART1.mkdir(exist_ok=True)
 
     BOLTZ_WORKING_DIR.mkdir(exist_ok=True)
@@ -37,5 +37,5 @@ def pytest_sessionfinish(session, exitstatus):
     shutil.rmtree(RFDIFFUSION_WORKING_DIR)
     shutil.rmtree(BOLTZGEN_WORKING_DIR)
     shutil.rmtree(BINDCRAFT_WORKING_DIR)
-    # shutil.rmtree(ALPHAFOLD_WORKING_DIR)
+    shutil.rmtree(ALPHAFOLD_WORKING_DIR)
     shutil.rmtree(BOLTZ_WORKING_DIR)
