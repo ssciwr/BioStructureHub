@@ -8,8 +8,8 @@ ALPHAFOLD_WORKING_DIR = NOTEBOOKS_DIR / "afold_test"  # must be created by user
 ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
 BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"  # must be created by user
 BOLTZGEN_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Boltzgen"  # created by user
-RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_RFDiffusion"
-BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"  # try
+RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_RFDiffusion"  # try
+BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"  # works
 
 
 def pytest_sessionstart(session):

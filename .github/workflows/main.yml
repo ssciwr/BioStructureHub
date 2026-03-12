@@ -71,4 +71,5 @@ jobs:
     - name: Run RFDiffusion
       run: |  
         cd notebooks
-        python -m pytest --nbval RFDiffusion.ipynb
+        python -m pytest --nbval  notebooks/RFDiffusion.ipynb tests/rfdiffusion_output.py
+
