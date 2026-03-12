@@ -1,0 +1,12 @@
+{
+    "design_path": "/home/hd/hd_hd/hd_aq354/protein_design_w_Bindcraft",
+    "binder_name": "PDL1",
+    "starting_pdb": "/home/hd/hd_hd/hd_aq354/protein_design_w_Bindcraft/PDL1.pdb",
+    "chains": "A",
+    "target_hotspot_residues": "56",
+    "lengths": [
+        65,
+        150
+    ],
+    "number_of_final_designs": 100
+}
