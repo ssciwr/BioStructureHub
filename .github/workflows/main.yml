@@ -51,8 +51,7 @@ jobs:
 
     - name: Run Bindcraft notebook
       run: |  
-        cd notebooks
-        python -m pytest --nbval bindcraft.ipynb
+        python -m pytest --nbval  notebooks/bindcraft.ipynb tests/bindcraft_output.py
 
     - name: Run Boltz Inference notebook
       run: |  
