@@ -64,8 +64,7 @@ jobs:
         
     - name: Run Boltzgen
       run: |  
-        cd notebooks
-        python -m pytest --nbval boltzgen.ipynb
+        python -m pytest --nbval notebooks/boltzgen.ipynb tests/boltzgen_output.py
 
     - name: Run RFDiffusion
       run: |  
