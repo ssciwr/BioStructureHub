@@ -55,13 +55,12 @@ jobs:
 
     - name: Run Boltz Inference notebook
       run: |  
-        cd notebooks
-        python -m pytest --nbval boltz_input.ipynb
+        python -m pytest --nbval notebooks/boltz_input.ipynb tests/boltz_output.py
 
     - name: Run Boltz Analysis notebook
       run: |  
-        cd notebooks
-        python -m pytest --nbval boltz_confidence_levels.ipynb
+        python -m pytest tests/boltz_prepare_analysis.py
+        python -m pytest --nbval notebooks/boltz_confidence_levels.ipynb
         
     - name: Run Boltzgen
       run: |  

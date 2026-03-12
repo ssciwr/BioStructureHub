@@ -6,9 +6,9 @@ NOTEBOOKS_DIR = Path(__file__).resolve().parent
 ALPHAFOLD_MODEL_DIR = NOTEBOOKS_DIR / "af3models"
 ALPHAFOLD_WORKING_DIR = NOTEBOOKS_DIR / "afold_test"  # must be created by user
 ALPHAFOLD_RESULTS_DIR_PART1 = ALPHAFOLD_WORKING_DIR / "output"
-BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"  # must be created by user
+BOLTZ_WORKING_DIR = NOTEBOOKS_DIR / "boltz_test"  # works
 BOLTZGEN_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Boltzgen"  # created by user
-RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_RFDiffusion"  # try
+RFDIFFUSION_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_RFDiffusion"  # works
 BINDCRAFT_WORKING_DIR = NOTEBOOKS_DIR / "protein_design_w_Bindcraft"  # works
 
 
@@ -38,4 +38,4 @@ def pytest_sessionfinish(session, exitstatus):
     shutil.rmtree(BOLTZGEN_WORKING_DIR)
     shutil.rmtree(BINDCRAFT_WORKING_DIR)
     # shutil.rmtree(ALPHAFOLD_WORKING_DIR)
-    # shutil.rmtree(BOLTZ_WORKING_DIR)
+    shutil.rmtree(BOLTZ_WORKING_DIR)
