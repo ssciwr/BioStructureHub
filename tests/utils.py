@@ -26,24 +26,6 @@ def normalize_text_paths(text: str, markers: list[str]) -> str:
 
 
 # -------------------------------
-# YAML normalization
-# -------------------------------
-def normalize_msa_paths(yaml_dict: Dict[str, Any], marker: str) -> Dict[str, Any]:
-    """
-    Strip absolute prefixes from msa fields only.
-    This is very tailored to the structure of the input YAML produced in the Boltz notebook, but it is sufficient for our testing purposes.
-    """
-    for seq in yaml_dict.get("sequences", []):
-        protein = seq.get("protein", {})
-        msa = protein.get("msa")
-        if msa and marker in msa:
-            prefix, suffix = msa.split(marker, 1)
-            # replace backslashes in the suffix only to please Windows
-            protein["msa"] = marker + suffix.replace("\\", "/")
-    return yaml_dict
-
-
-# -------------------------------
 # Helper functions for loading files
 # -------------------------------
 def load_yaml(path: str) -> Dict[str, Any]:
@@ -56,7 +38,7 @@ def load_yaml(path: str) -> Dict[str, Any]:
 # -------------------------------
 def prepare_results(src: Path, dst: Path) -> None:
     """
-    Copy reference Boltz results to the destination directory.
+    Copy reference results to the destination directory.
     Creates or overwrites the destination so that analysis notebooks can read it.
     """
     if dst.exists():
