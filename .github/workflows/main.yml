@@ -33,15 +33,19 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
+
     - name: Pre-cache matplotlib font (cross-platform)
       run: |
         python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
+
     - name: Run AlphaFold3  Alignment notebook
       run: |
         python -m pytest --nbval notebooks/AFold_Alignment_CPU.ipynb tests/afold_alignment_output.py
+        
     - name: Run AlphaFold3 Inference notebook
       run: |
         python -m pytest --nbval notebooks/AFold_Diffusion_GPU.ipynb tests/afold_diffusion_output.py
+
     - name: Run AlphaFold3 Analysis notebook
       run: |  
         python -m pytest tests/afold_prepare_analysis.py
