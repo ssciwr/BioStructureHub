@@ -11,12 +11,20 @@ from pathlib import Path
 # -------------------------------
 def normalize_text_paths(text: str, markers: list[str]) -> str:
     """
-    Normalize absolute paths in text files by replacing everything
-    before the given markers with the marker itself.
-    Handles multiple occurrences per line and both Linux/Windows paths.
+    Normalize absolute paths in text files:
+    - Strips everything before the full marker
+    - Handles multiple markers and multiple occurrences per line
+    - Handles Linux absolute paths (/home/...) and Windows absolute paths (C:\...)
     """
     for marker in markers:
-        text = re.sub(rf"/[^ \n]*?\b({re.escape(marker)})\b(/?)", r"\1\2", text)
+        # does not work on windows due to drive letters in github runner
+        # text = re.sub(rf"/[^ \n]*?\b({re.escape(marker)})\b(/?)", r"\1\2", text)
+        # try
+        text = re.sub(
+            rf"(?:[A-Za-z]:)?[\\/][^ \n]*?\b({re.escape(marker)})\b([\\/][^\s]*)?",
+            r"\1\2",
+            text,
+        )
     return text
 
 
