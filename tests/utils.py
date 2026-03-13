@@ -17,9 +17,6 @@ def normalize_text_paths(text: str, markers: list[str]) -> str:
     - Handles Linux absolute paths (/home/...) and Windows absolute paths (C:\...)
     """
     for marker in markers:
-        # does not work on windows due to drive letters in github runner
-        # text = re.sub(rf"/[^ \n]*?\b({re.escape(marker)})\b(/?)", r"\1\2", text)
-        # try
         text = re.sub(
             rf"(?:[A-Za-z]:)?[\\/][^ \n]*?\b({re.escape(marker)})\b([\\/][^\s]*)?",
             r"\1\2",
@@ -34,12 +31,15 @@ def normalize_text_paths(text: str, markers: list[str]) -> str:
 def normalize_msa_paths(yaml_dict: Dict[str, Any], marker: str) -> Dict[str, Any]:
     """
     Strip absolute prefixes from msa fields only.
+    This is very tailored to the structure of the input YAML produced in the Boltz notebook, but it is sufficient for our testing purposes.
     """
     for seq in yaml_dict.get("sequences", []):
         protein = seq.get("protein", {})
         msa = protein.get("msa")
         if msa and marker in msa:
-            protein["msa"] = marker + msa.split(marker, 1)[-1]
+            prefix, suffix = msa.split(marker, 1)
+            # replace backslashes in the suffix only to please Windows
+            protein["msa"] = marker + suffix.replace("\\", "/")
     return yaml_dict
 
 
