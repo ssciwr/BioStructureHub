@@ -25,7 +25,7 @@ def normalize_text_paths(text: str, markers: list[str]) -> str:
             r"\1\2",
             text,
         )
-    return text
+    return text.replace("\\", "/")
 
 
 # -------------------------------
