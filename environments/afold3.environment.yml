@@ -1,0 +1,15 @@
+name: afold3
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.13
+  - matplotlib
+  - numpy=2.3.1
+  - pandas
+  - seaborn
+  - pip:
+    - biopython==1.85
+
+

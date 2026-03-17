@@ -8,3 +8,12 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssciwr/BioStructureHub/blob/main/notebooks/AFold_Alignment_CPU.ipynb)
 
 This is the main repository with resources for the Bio-Structure Hub project. The goal of this project is to provide a comprehensive and user-friendly platform for accessing and analyzing biological structure data. The Bio-Structure Hub is enabled by the [Klaus-Tschira Stiftung](https://klaus-tschira-stiftung.de/).
+
+## How to use
+
+Find our comprehensive tutorials on our website at [https://ssciwr.github.io/BioStructureHub/](https://ssciwr.github.io/BioStructureHub/)! We provide Jupyter notebooks that are ready to run with the provided environments on the bwForCluster Helix via bwVisu.
+
+## Transfer Notebooks to your Jupyter Hub
+
+The repository contains a folder with full Conda environment specifications that you can use to transfer on your HPC system (or any machine where you need the complete stack).
+
