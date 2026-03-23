@@ -32,7 +32,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install -r requirements.txt
+        pip install -e ".[test]"
 
     - name: Pre-cache matplotlib font (cross-platform)
       run: |
@@ -48,8 +48,7 @@ jobs:
 
     - name: Run AlphaFold3 Analysis notebook
       run: |  
-        python -m pytest tests/afold_prepare_analysis.py
-        python -m pytest --nbval notebooks/AFold_Confidence_Levels.ipynb
+        python -m pytest tests/afold_prepare_analysis.py --nbval notebooks/AFold_Confidence_Levels.ipynb
 
     - name: Run Bindcraft notebook
       run: |  
@@ -61,8 +60,7 @@ jobs:
 
     - name: Run Boltz Analysis notebook
       run: |  
-        python -m pytest tests/boltz_prepare_analysis.py
-        python -m pytest --nbval notebooks/boltz_confidence_levels.ipynb
+        python -m pytest tests/boltz_prepare_analysis.py --nbval notebooks/boltz_confidence_levels.ipynb
         
     - name: Run Boltzgen
       run: |  

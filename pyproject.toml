@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BioStructureHub"
+version = "0.1.0-dev"
+description = "A set of Jupyter notebooks and tutorials for running protein 3D structure prediction and design software on bwForCluster bwVisu / Helix."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{name = "Christine Schulz", email = "christine.schulz@iwr.uni-heidelberg.de"},
+           {name = "Inga Ulusoy", email = "inga.ulusoy@iwr.uni-heidelberg.de"}]
+
+# Runtime dependencies – required for CI
+dependencies = [
+    "biopython",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "seaborn",
+]
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs<2.0",
+    "mkdocs-material<9.0",
+    "mkdocs-callouts",
+    "mkdocs-blog-plugin",
+]
+test = [
+    "pytest",
+    "nbval",
+    "PyYAML",
+]
+
+# Pytest configuration – tells pytest to treat *.ipynb as test files
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "*_test.py", "*.ipynb"]
+norecursedirs = [".ipynb_checkpoints"]
+addopts = "--nbval"
+
+# Pre‑commit hook configuration
+[tool.pre_commit]
+
+# Explicitly tell setuptools which directories to treat as packages
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["notebooks*"]
+exclude = ["site*", "references*", "environments*"]
