@@ -1,0 +1,44 @@
+name: bindcraft
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - biopython
+  - cuda-nvcc
+  - cudnn
+  - ffmpeg
+  - fsspec
+  - jupyter
+  - matplotlib
+  - numpy<2.0
+  - pandas
+  - pdbfixer
+  - py3dmol
+  - seaborn
+  - scipy
+  - tqdm
+  - pip:
+    - chex
+    - dm-haiku
+    - dm-tree 
+    - colabdesign==1.1.3
+    - flax==0.9.0
+    - immutabledict
+    - jax-cuda12-plugin==0.6.0
+    - jax>=0.4,<=0.6.0
+    - jaxlib>=0.4,<=0.6.0
+    - joblib
+    - ml-collections
+    - nvidia-cuda-cupti-cu12==12.9.79
+    - nvidia-cuda-nvcc-cu12==12.9.86
+    - nvidia-cuda-nvrtc-cu12==12.9.86
+    - nvidia-cuda-runtime-cu12==12.9.79
+    - nvidia-cudnn-cu12==9.18.0.77
+    - nvidia-cufft-cu12==11.4.1.4
+    - nvidia-cusolver-cu12==11.7.5.82
+    - nvidia-nccl-cu12==2.29.2
+    - nvidia-nvshmem-cu12==3.5.19
+    - optax
+    - pyrosetta==2026.3+release.5e498f1409

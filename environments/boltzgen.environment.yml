@@ -1,0 +1,23 @@
+name: boltzgen
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - numba==0.61.0
+  - numpy==2.0.2
+  - pip:
+    - boltzgen==0.3.1
+
+
+
+
+
+
+
+
+
+
+
+
