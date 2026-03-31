@@ -21,14 +21,14 @@ Choose Jupyter and start a new session. Now you can select the resources you nee
 
 Boltzgen needs a GPU to run in the cluster. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a>, or in the table below.
 
-![Screenshot](../images/tutorial/Helix_GPU.png)
+![Screenshot](../images/tutorial/Helix_GPU.png){:.invertable}
 <!--Cant I link this directly?-->
 
-The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. Feel free to contact us, if you need assistance!
+The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. Feel free to contact us, if you need assistance!
 
-Choose the Kernel Path to Boltzen `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
+Choose the Kernel Path to Boltzgen `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
-![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 
@@ -40,21 +40,21 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
-![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
 Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> and the <a href="https://www.rcsb.org/structure/1G13" target="_blank" rel="noopener">1g13.cif</a> file by clicking on the upload button:
 
-![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left. 
 
-![Screenshot](../images/tutorial/bwVisu_Boltzgen_files.png){: style="width:268px"} 
+![Screenshot](../images/tutorial/bwVisu_Boltzgen_files.png){: .invertable style="width:268px"} 
 
 ### Step 4: Open the Notebook and Start the Calculation
 
 Open `Boltzgen.ipynb` and select the `boltzgen` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
-![Screenshot](../images/tutorial/bwVisu_Boltzgen_kernel.png){: style="width:232px"} 
+![Screenshot](../images/tutorial/bwVisu_Boltzgen_kernel.png){: .invertable style="width:232px"} 
 
 Now execute the cells in the notebook to start your Boltzgen run!
 
@@ -63,20 +63,17 @@ Now execute the cells in the notebook to start your Boltzgen run!
 
 Before starting your Boltz prediction you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Boltzgen_input.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Boltzgen_input.png){:.invertable  style="width:268px"}
 
 #### Verify Output 
 
 In the output directory, there should be multiple files. The intermediate directories will help you understand the reasoning. A detailed explanation can be found   <a href="https://github.com/HannesStark/boltzgen?tab=readme-ov-file#pipeline-output" target="_blank" rel="noopener">here</a>.
 
-![Screenshot](../images/tutorial/bwVisu_Boltzgen_more_output.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Boltzgen_more_output.png){: .invertable style="width:268px"}
 
 The best models are in`final_ranked_designs`:
 
-![Screenshot](../images/tutorial/bwVisu_Boltzgen_output.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Boltzgen_output.png){: .invertable style="width:268px"}
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 

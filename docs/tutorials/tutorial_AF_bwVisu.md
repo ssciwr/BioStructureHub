@@ -38,7 +38,7 @@ Choose Jupyter and start a new session. Now you can select the resources you nee
 
 The first step of the AlphaFold prediction is a multi-sequence alignment (MSA). For the MSA step, select 8 CPU cores with 10 GB of memory. The GPU necessary for the second step will be requested later. 
 
-![Screenshot](../images/tutorial/bwVisu_CPU.png)
+![Screenshot](../images/tutorial/bwVisu_CPU.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
@@ -47,15 +47,15 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 First we need to define a working directory. That can be your `home` or any directory you create. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
-![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
 Next all required files need to be uploaded. This includes the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> and the AlphaFold parameters. You can upload these files by clicking on the upload button:
 
-![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
 Note that the AlphaFold parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your working directory, such as `/af3models`. 
 
-![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: style="height:95px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: .invertable style="height:95px;width:268px"}
 
 After the upload, you can see your files in the file browser on the left.
 
@@ -68,15 +68,14 @@ Open `Afold_Alignment_CPU.ipynb` and execute the cells in the notebook to start 
 
 Before starting your AlphaFold 3 alignment you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_MSA_input.png){: style="height:112px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_MSA_input.png){: .invertable style="height:112px;width:268px"}
 
 
 #### Verify Output 
 
 In the output directory, there should be a second `.json` file in the `output/test` directory. This includes all the information from the input file and the results of the MSA. 
 
-![Screenshot](../images/tutorial/bwVisu_Afold_json.png)
-{: style="height:89px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_json.png){: .invertable style="height:89px;width:268px"}
 
 
 You can now close this interactive session session on bwVisu, as the CPU is no longer needed, and move to the second step.
@@ -90,12 +89,12 @@ You can now close this interactive session session on bwVisu, as the CPU is no l
 The second step of the AlphaFold prediction is the inference of the structure by the model, and it requires a GPU. Therefore we need another Jupyter session, where we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a> , or in the table below.
 
 
-![Screenshot](../images/tutorial/Helix_GPU.png)
+![Screenshot](../images/tutorial/Helix_GPU.png){:.invertable}
 <!--Cant I link this directly?-->
 
 The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
-![Screenshot](../images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 
@@ -111,15 +110,13 @@ Execute the cells in the notebook to continue your AlphaFold run!
 
 Before starting your AlphaFold 3 diffusion you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_GPU_input.png)
-{: style="height:159px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_GPU_input.png){: .invertable style="height:159px;width:268px"}
 
 #### Verify Output
 
 You should see the AlphaFold output files:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_GPU_output.png)
-{: style="height:335px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Afold_GPU_output.png){:.invertable  style="height:335px;width:268px"}
 
 By default AlphaFold creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
 The best model is presented in the output directory as well, with its structure file and confidence descriptions. The latter are needed to judge the quality of the prediction.
@@ -137,7 +134,7 @@ You can use `Afold_Confidence_Levels.ipynb` to get a summary of the models confi
 
 For this last notebook, you need to have access to a shared directory that includes libraries that are used to analyze and visualize the output. Start a new JupyterLab session and define the `Kernel Path` to the AlphaFold kernel at `/mnt/sds-hd/sd25g005/afold3/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
-![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
@@ -146,7 +143,7 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 Open `Afold_Confidence_Levels.ipynb` and select the `afold3` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_kernel.png){: style="width:232px"} 
+![Screenshot](../images/tutorial/bwVisu_Afold_kernel.png){: .invertable style="width:232px"} 
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
