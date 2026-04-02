@@ -34,7 +34,7 @@ def load_yaml(path: str) -> Dict[str, Any]:
 
 
 # -------------------------------
-# Helper functions for copying files
+# Helper functions for copying directories
 # -------------------------------
 def prepare_results(src: Path, dst: Path) -> None:
     """
@@ -47,3 +47,22 @@ def prepare_results(src: Path, dst: Path) -> None:
 
     if not dst.exists():
         raise RuntimeError(f"Failed to create {dst}")
+
+
+# -------------------------------
+# Helper functions for copying directories
+# -------------------------------
+
+
+def prepare_file(src: Path, dst: Path) -> None:
+    """
+    Copy a reference file into the destination directory.
+    src: Path to source file (must exist). dst: Path to destination file
+    """
+    if not src.is_file():
+        raise FileNotFoundError(src)
+
+    shutil.copy2(src, dst)
+
+    if not dst.is_file():
+        raise RuntimeError(f"Failed to copy {src} to {dst}")
