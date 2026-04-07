@@ -43,15 +43,14 @@ nav:
   - Home: index.md
   - Who we are: 
     - about.md
-    - about/projects.md
-    - about/cite.md
+    - projects.md
+    - cite.md
     - News:
       - blog/index.md
   - What we offer: 
     - services/service.md
     - services/collab.md
     - services/teaching.md
-  #- Resources: 
     - resources/methods.md
     - resources/learning.md
   - Tutorials: 
