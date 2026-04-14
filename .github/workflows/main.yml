@@ -70,3 +70,20 @@ jobs:
       run: |  
         python -m pytest --nbval  notebooks/RFDiffusion.ipynb tests/rfdiffusion_output.py
 
+  test_md:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environments/molecular_dynamics.yml
+          activate-environment: openmm
+          auto-activate-base: false
+          use-mamba: true
+          auto-activate-environment: true
+
+      - run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate openmm 
+          python -m pytest -x --nbval tests/prepare_md.py notebooks/Molecular_Dynamics.ipynb

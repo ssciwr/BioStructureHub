@@ -1,0 +1,10 @@
+
+version: 1
+sequences:
+  - protein:
+      id: [A] 
+      sequence: GGG
+      msa: /home/hd/hd_hd/hd_aq354/boltz_test/G3_example.a3m
+  - ligand:
+      id : [B]
+      ccd: MOH

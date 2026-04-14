@@ -12,6 +12,7 @@ DIRS = {
     "BOLTZGEN_WORKING_DIR": NOTEBOOKS_DIR / "protein_design_w_Boltzgen",
     "RFDIFFUSION_WORKING_DIR": NOTEBOOKS_DIR / "protein_design_w_RFDiffusion",
     "BINDCRAFT_WORKING_DIR": NOTEBOOKS_DIR / "protein_design_w_Bindcraft",
+    "MD_WORKING_DIR": NOTEBOOKS_DIR / "md_inputs",
 }
 
 
