@@ -60,6 +60,7 @@ nav:
     - tutorials/tutorial_Boltz_bwVisu.md
     - tutorials/tutorial_Boltzgen_bwVisu.md
     - tutorials/tutorial_RFDiffusion_bwVisu.md
+    - tutorials/tutorial_MD_bwVisu.md
   - Contact: contact.md
 
 extra_css:

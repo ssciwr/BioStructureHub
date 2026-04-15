@@ -34,7 +34,7 @@ Make sure that the output of your structure prediction is in the same directory 
 
 It should look like this:
 
-![Screenshot](../images/tutorial/bwVisu_MD_files.png){: .invertable style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_MD_files.png){: .invertable style="height:142px"}
 
 
 ### Step 3: Start the Simulation
