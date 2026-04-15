@@ -42,14 +42,11 @@ Now we need to define a working directory. These will contain all files necessar
 
 ![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
 
-Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook and the `example.a3m` file by clicking on the upload button:
+Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook to bwVisu by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
-After the upload, you can see the notebooks in the file browser on the left:
-
-![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
-{: style="width:268px"} 
+You also need a `.fasta` file of your sequence to start. You can use our example `insulin.fasta` from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/references/boltz" target="_blank" rel="noopener">github</a>
 
 ### Step 5: Open the Notebook and Start the Calculation
 
