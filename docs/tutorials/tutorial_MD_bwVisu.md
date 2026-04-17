@@ -39,4 +39,4 @@ It should look like this:
 
 ### Step 3: Start the Simulation
 
-Open `Molecular_Dynamics.ipynb`, add your `.cif` file (and in case of Boltz you input `.yaml`) in the notebook and then execute all the cells in the notebook to start your Molecular Dynamics run!
+Open `Molecular_Dynamics.ipynb`, add your `.cif` file (and in case of Boltz your input `.yaml`) in the notebook and then execute all the cells in the notebook to start your Molecular Dynamics run!
