@@ -21,14 +21,14 @@ Choose Jupyter and start a new session. Now you can select the resources you nee
 
 RFDiffusion needs a GPU to run in the cluster. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a>, or in the table below.
 
-![Screenshot](../images/tutorial/Helix_GPU.png)
+![Screenshot](../images/tutorial/Helix_GPU.png){:.invertable}
 <!--Cant I link this directly?-->
 
-The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. Feel free to contact us, if you need assistance!
+The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. Feel free to contact us, if you need assistance!
 
 <!--No Kernel needed-->
 
-![Screenshot](../images/tutorial/bwVisu_GPU.png)
+![Screenshot](../images/tutorial/bwVisu_GPU.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
@@ -37,11 +37,11 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
-![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
 Upload the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> by clicking on the upload button:
 
-![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left.
 
@@ -55,8 +55,7 @@ Load the RFDiffusion module by clicking on the hexagon on the right and selectin
 Open the notebook. Check if module list works by executing the first cells.
 If the notebook was open before, restart the kernel.
 
-![Screenshot](../images/tutorial/restart_kernel.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/restart_kernel.png){: .invertable style="width:268px"}
 
 
 Execute the steps in the notebook to start the calculation. 
@@ -65,14 +64,13 @@ Execute the steps in the notebook to start the calculation.
 
 Before starting your Boltz prediction you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_RFD_input.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_RFD_input.png){: .invertable style="width:268px"}
 
 #### Verify Output
 
 Once the calculation is done you will see the files in your `WORKING_DIR`:
 
-![Screenshot](../images/tutorial/bwVisu_RFD_files.png){: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_RFD_files.png){: .invertable style="width:268px"}
 
 You can find your results in the `outputs` directory. For more information, please refer to the <a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank" rel="noopener">RFDiffusion documentation</a>.
 
