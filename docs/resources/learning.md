@@ -1,4 +1,4 @@
-# Learning Center - Training Resources
+# Training Resources: Learning Center 
 
 ## Introduction to Bioinformatics
 

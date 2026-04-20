@@ -14,7 +14,7 @@ For technical questions regarding the high performance cluster, see <a href="htt
 
 ### Step 2: Prepare the Multisequence Alignment 
 
-The first step of the structure prediction is a multi-sequence alignment (MSA), which provides the basis for the prediction. Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. You can calculate the MSA locally using <a href="https://github.com/soedinglab/MMseqs2" target="_blank" rel="noopener">mmseqs2</a>. For this tutorial you can download the `example.a3m` file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
+The first step of the structure prediction is a multi-sequence alignment (MSA), which provides the basis for the prediction. Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. You can calculate the MSA locally using <a href="https://github.com/soedinglab/MMseqs2" target="_blank" rel="noopener">mmseqs2</a>. For this tutorial you can download the `example.a3m` file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/references/boltz" target="_blank" rel="noopener">github</a>. 
 
 ### Step 3: Connect to bwVisu and Start Jupyter 
 
@@ -24,14 +24,14 @@ Choose Jupyter and start a new session. Now you can select the resources you nee
 
 For the inference step we need a GPU, so we need to request a GPU node on bwVisu. A list of available GPUs and their specifications is available at <a href="https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes" target="_blank" rel="noopener">https://wiki.bwhpc.de/e/Helix/Hardware#Compute_Nodes</a>, or in the table below.
 
-![Screenshot](../images/tutorial/Helix_GPU.png)
+![Screenshot](../images/tutorial/Helix_GPU.png){:.invertable}
 <!--Cant I link this directly?-->
 
-The GPU is selected byw "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
+The GPU is selected by "GPU Type". The memory of each GPU Type is specified in GPU Memory per GPU (GB). For this example we select one of the A40 GPUs. Larger jobs (= longer sequences, more chains) require more memory. To access these, it is suggested to run the job directly on the Helix cluster. We will prepare a tutorial for this shortly - feel free to contact us!
 
 You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd25g005/boltz/share/jupyter/`. [Contact us](../contact.md) for access to this shared directory.
 
-![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png)
+![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
@@ -40,22 +40,21 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
-![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
 Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook and the `example.a3m` file by clicking on the upload button:
 
-![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
+![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
 After the upload, you can see the notebooks in the file browser on the left:
 
-![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
-{: style="width:268px"} 
+![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png){: .invertable style="width:268px"} 
 
 ### Step 5: Open the Notebook and Start the Calculation
 
  Open `Boltz_input.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
- ![Screenshot](../images/tutorial/bwVisu_Boltz_kernel.png){: style="width:232px"} 
+ ![Screenshot](../images/tutorial/bwVisu_Boltz_kernel.png){: .invertable style="width:232px"} 
 
 Now execute the cells in the notebook to start your Boltz run!
 
@@ -63,15 +62,13 @@ Now execute the cells in the notebook to start your Boltz run!
 
 Before starting your Boltz prediction you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Boltz_input.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Boltz_input.png){: .invertable style="width:268px"}
 
 #### Verify Output 
 
 In the output directory, there should be multiple files. The .cif file includes the structure, the other files are used to determine the quality of the prediction. 
 
-![Screenshot](../images/tutorial/bwVisu_Boltz_output.png)
-{: style="width:268px"}
+![Screenshot](../images/tutorial/bwVisu_Boltz_output.png){: .invertable style="width:268px"}
 
 
 ### Step 6: Analyze your results
