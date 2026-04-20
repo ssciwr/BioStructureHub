@@ -12,11 +12,8 @@ To start, get access to bwVisu via bwForCluster Helix or SDS. For more informati
 
 For technical questions regarding the high performance cluster, see <a href="https://bw-support.scc.kit.edu" target="_blank" rel="noopener">https://bw-support.scc.kit.edu</a>. Feel free to [contact us](../contact.md) for support.
 
-### Step 2: Prepare the Multisequence Alignment 
 
-The first step of the structure prediction is a multi-sequence alignment (MSA), which provides the basis for the prediction. Boltz relies on external partner, such as the <a href="https://www.nature.com/articles/s41592-022-01488-1" target="_blank" rel="noopener">colabfold</a> server. To run Boltz on bwVisu, a precomputed MSA file for any given input sequence needs to be provided. You can calculate the MSA locally using <a href="https://github.com/soedinglab/MMseqs2" target="_blank" rel="noopener">mmseqs2</a>. For this tutorial you can download the `example.a3m` file from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. 
-
-### Step 3: Connect to bwVisu and Start Jupyter 
+### Step 2: Connect to bwVisu and Start Jupyter 
 
 Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
 
@@ -36,22 +33,19 @@ You also need to define the `Kernel Path` to the boltz kernel at `/mnt/sds-hd/sd
 
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
 
-### Step 4: Set a Working Directory and Upload Files
+### Step 3: Set a Working Directory and Upload Files
 
 Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
 ![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
 
-Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook and the `example.a3m` file by clicking on the upload button:
+Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook to bwVisu by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
-After the upload, you can see the notebooks in the file browser on the left:
+You also need a `.fasta` file of your sequence to start. You can use our example `insulin.fasta` from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/references/boltz" target="_blank" rel="noopener">github</a>
 
-![Screenshot](../images/tutorial/bwVisu_Boltz_MSA.png)
-{: style="width:268px"} 
-
-### Step 5: Open the Notebook and Start the Calculation
+### Step 4: Open the Notebook and Start the Calculation
 
  Open `Boltz_input.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
@@ -74,7 +68,7 @@ In the output directory, there should be multiple files. The .cif file includes 
 {: style="width:268px"}
 
 
-### Step 6: Analyze your results
+### Step 5: Analyze your results
 
 Open the second notebook called `Boltz_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
