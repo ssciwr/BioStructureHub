@@ -35,11 +35,12 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 ### Step 3: Set a Working Directory and Upload Files
 
-Now we need to define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
+Now we need to create and define a working directory. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
 
 ![Screenshot](../images/tutorial/bwVisu_newDir.png){: style="height:111px;width:444px"}
 
-Download the tutorial notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook to bwVisu by clicking on the upload button:
+Create a working dir called `boltz_test`.
+Download the tutorial notebook `Boltz_w_mmseqs.ipynb` from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a>. Upload the notebook to bwVisu by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: style="height:111px;width:444px"}
 
@@ -47,7 +48,7 @@ You also need a `.fasta` file of your sequence to start. You can use our example
 
 ### Step 4: Open the Notebook and Start the Calculation
 
- Open `Boltz_input.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
+ Open `Boltz_w_mmseqs.ipynb` and select the `boltz` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
  ![Screenshot](../images/tutorial/bwVisu_Boltz_kernel.png){: style="width:232px"} 
 
@@ -55,7 +56,7 @@ Now execute the cells in the notebook to start your Boltz run!
 
 #### Verify Input
 
-Before starting your Boltz prediction you should see the following files in your working directory:
+After running mmseqs2 and before starting your Boltz prediction you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_Boltz_input.png)
 {: style="width:268px"}
@@ -72,7 +73,7 @@ In the output directory, there should be multiple files. The .cif file includes 
 
 Open the second notebook called `Boltz_Confidence_Levels.ipynb` to get a summary of the models confidence levels. This notebook reads the confidence descriptions and renders its central information.
 
-To find the files, you need the name of the input file of the Boltz run and your working directory. In this example we used `input_file.yaml`, so the directory structure `input_file` is automatically created.
+To find the files, you need the name of the input file of the Boltz run and your working directory. In this example we used `insulin.yaml`, so the directory structure `insulin` is automatically created.
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
