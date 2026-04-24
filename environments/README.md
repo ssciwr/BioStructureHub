@@ -27,3 +27,9 @@ Exact package versions resolved by the solver may vary depending on:
 - CUDA or system libraries
 
 - available package builds
+
+## Notes on Boltz
+
+Note that Boltz requires [mmseqs2](https://github.com/soedinglab/MMseqs2) and [colabfold](https://github.com/YoshitakaMo/localcolabfold) to be installed. Helpful issues: 
+-  [https://github.com/jwohlwend/boltz/issues/333#issuecomment-2963120545](https://github.com/jwohlwend/boltz/issues/333#issuecomment-2963120545)
+-  [https://github.com/soedinglab/MMseqs2/issues/588](https://github.com/soedinglab/MMseqs2/issues/588)
