@@ -83,7 +83,20 @@ jobs:
           use-mamba: true
           auto-activate-environment: true
 
-      - run: |
+      - name: Install local tool ccd2smiles
+        run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate openmm
+          pip install -e tools/ccd2smiles
+
+      - name: Run ccd2smiles tests
+        run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate openmm
+          pytest tools/ccd2smiles/tests
+
+      - name: Run MD Notebook
+        run: |
           source $CONDA/etc/profile.d/conda.sh
           conda activate openmm 
           python -m pytest -x --nbval tests/prepare_md.py notebooks/Molecular_Dynamics.ipynb
