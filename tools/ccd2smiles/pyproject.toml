@@ -1,6 +1,9 @@
 [project]
 name = "ccd2smiles"
 version = "0.1.0"
+dependencies = [
+    "requests",
+]
 
 [project.scripts]
 ccd2smiles = "ccd2smiles.ccd2smiles:main"

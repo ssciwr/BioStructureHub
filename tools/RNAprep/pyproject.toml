@@ -7,6 +7,11 @@ name = "RNAprep"
 version = "0.1.0"
 description = "RNA residue naming standardization for PDB files"
 requires-python = ">=3.9"
+dependencies = [
+    "biopython",
+    "pdbfixer",
+    "openmm",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -3,7 +3,7 @@ from Bio.PDB.Residue import Residue
 from openmm.app import PDBFile
 from pathlib import Path
 import subprocess
-from pdb_io import load_pdb, save_pdb
+from .pdb_io import load_pdb, save_pdb
 
 
 def run_tleap(basename, output_pdb):

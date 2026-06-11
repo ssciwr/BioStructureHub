@@ -1,4 +1,4 @@
-from pipeline_steps import (
+from .pipeline_steps import (
     run_tleap,
     run_pdbfixer,
     write_reorderd_pdb,
