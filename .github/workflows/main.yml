@@ -76,12 +76,15 @@ jobs:
     strategy:
       matrix:
         include:
-          # Protein example with Boltz
-          - input_file: md_inputs/G3_example_model_0.cif
-            boltz_input_file: md_inputs/G3_example.yaml
-          # RNA example with Boltz
-          - input_file: md_inputs/GGG_RNA_model_0.cif
-            boltz_input_file: md_inputs/GGG_RNA.yaml
+          # Protein with small molecule with smiles
+          - input_file: md_inputs/G3_smol_model_0.cif
+            boltz_input_file: md_inputs/G3_smol_smi.yaml
+          # Protein ion as CCD
+          - input_file: md_inputs/G3_ion_model_0.cif
+            boltz_input_file: md_inputs/G3_ion.yaml
+          # Protein with RNA 
+          - input_file: md_inputs/G3_RNA_model_0.cif
+            boltz_input_file: md_inputs/G3_RNA.yaml
 
     steps:
       - uses: actions/checkout@v4
