@@ -16,7 +16,7 @@ dependencies:
   - scipy=1.17.1
   - matplotlib=3.10.8
   - openff-toolkit==0.18.0
-  - openforcefields
+  - openmmforcefields
 
 
 
