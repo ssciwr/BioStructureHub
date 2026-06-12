@@ -77,11 +77,11 @@ jobs:
       matrix:
         include:
           # Protein example with Boltz
-          - input_file: inputs/G3_example_model_0.cif
-            boltz_input_file: inputs/G3_example.yaml
+          - input_file: md_inputs/G3_example_model_0.cif
+            boltz_input_file: md_inputs/G3_example.yaml
           # RNA example with Boltz
-          - input_file: inputs/GGG_RNA_model_0.cif
-            boltz_input_file: inputs/GGG_RNA.yaml
+          - input_file: md_inputs/GGG_RNA_model_0.cif
+            boltz_input_file: md_inputs/GGG_RNA.yaml
 
     steps:
       - uses: actions/checkout@v4
