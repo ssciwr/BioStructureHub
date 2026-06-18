@@ -1,9 +1,11 @@
 from pdbfixer import PDBFixer
 from Bio.PDB.Residue import Residue
+from openmm import unit
 from openmm.app import PDBFile
 from pathlib import Path
 import subprocess
 from .pdb_io import load_pdb, save_pdb
+import numpy as np
 
 
 def run_tleap(basename, output_pdb):
@@ -40,7 +42,7 @@ source leaprc.DNA.OL21
 
 loadoff terminal_monophosphate.lib
 
-rna = loadpdb {basename}_protein.pdb
+rna = loadpdb {basename}_protein_00.pdb
 check rna
 
 savepdb rna {output_pdb}
@@ -56,6 +58,42 @@ quit
             stderr=subprocess.STDOUT,
             check=True,
         )
+
+
+def remove_op3(input_pdb, output_pdb):
+    """
+    Remove the terminal phosphate oxygen atom ("OP3") from the first residue
+    of each chain in a PDB structure (if it contains OP3) and write the modified
+    structure to a new PDB file.
+
+    Parameters
+    ----------
+    input_pdb : str
+        Path to the input PDB file.
+    output_pdb : str
+        Path where the modified PDB file will be written.
+
+    Returns
+    -------
+    str
+        The path to the output PDB file.
+
+    Notes
+    -----
+    The OP3 atom is typically present on a 5'-terminal phosphate group in
+    nucleic acid structures. Removing it is neccessary for AlphaFold structures
+    that feature a distorted PO4 geometry.
+    """
+    structure = load_pdb(input_pdb)
+
+    for chain in structure.get_chains():
+        residues = list(chain.get_residues())
+        first_residue = residues[0]
+
+        if first_residue.has_id("OP3"):
+            first_residue.detach_child("OP3")
+
+    save_pdb(structure, output_pdb)
 
 
 def run_pdbfixer(input_pdb, output_pdb):
@@ -119,7 +157,7 @@ def reorder_pdb(structure, targets, new_resname="OHE"):
 
             res_copy = Residue((" ", res.id[1] - 1, " "), new_resname, res.segid)
 
-            for atom in move:
+            for atom in reversed(move):
                 res_copy.add(atom.copy())
                 res.detach_child(atom.id)
 
@@ -230,7 +268,113 @@ def write_pdb_with_connect(pdb_file, output_pdb, targets):
     with open(pdb_file) as fin, open(output_pdb, "w") as fout:
         for line in fin:
             if line.startswith("END"):
-                for p, op3, hop3 in zip(p_idx, op_idx[::2], op_idx[1::2]):
+                for p, op3, hop3 in zip(p_idx, op_idx[1::2], op_idx[::2]):
                     fout.write(f"CONECT{op3:5d}{hop3:5d}\n")
                     fout.write(f"CONECT{op3:5d}{p:5d}\n")
             fout.write(line)
+
+
+def fix_phosphate_pdb(infile, outfile, thresh=2):
+    """
+    Fix overlapping OP3/OP1(OP2) phosphate geometry for chains beginning with OHE.
+
+    Parameters
+    ----------
+    infile : str
+        Input PDB path.
+    outfile : str
+        Output PDB path.
+    thresh : float
+        Distance threshold in Å.
+    keep_ids : bool
+        Passed to PDBFile.writeFile().
+    write_conects : bool
+        If False, suppress CONECT records.
+    """
+
+    # keep connect records from original file
+    with open(infile) as f:
+        original_conect = [line for line in f if line.startswith("CONECT")]
+
+    # read positions and topology with OpenMM
+    pdb = PDBFile(infile)
+    pos = pdb.positions
+
+    # helper to get atom index by name in a residue
+    def idx(res, name):
+        for atom in res.atoms():
+            if atom.name == name:
+                return atom.index
+        return None
+
+    # helper to compute distance between two atoms by index
+    def d(i, j):
+        v = pos[j] - pos[i]
+        return np.linalg.norm(v.value_in_unit(unit.nanometer)) * 10.0  # in Angstrom
+
+    for chain in pdb.topology.chains():
+        # find nucleotide chains that start with OHE
+        residues = list(chain.residues())
+        r1, r2 = residues[0], residues[1]
+
+        if not (r1.name == "OHE"):
+            continue
+
+        # get atom indices for OHE and adjacent residue
+        P = idx(r2, "P")
+        OP1 = idx(r2, "OP1")
+        OP2 = idx(r2, "OP2")
+        OP3 = idx(r1, "OP3")
+        O5 = idx(r2, "O5'")
+
+        # find if there is something to fix
+        if min(d(OP1, OP3), d(OP2, OP3)) >= thresh:
+            continue
+
+        p = pos[P]
+        o5 = pos[O5]
+        op3 = pos[OP3]
+
+        u = o5 - p
+        u /= np.linalg.norm(u)
+
+        tmp = np.array([1.0, 0.0, 0.0])
+        if abs(np.dot(tmp, u)) > 0.9:
+            tmp = np.array([0.0, 1.0, 0.0])
+
+        e1 = np.cross(u, tmp)
+        e1 /= np.linalg.norm(e1)
+
+        e2 = np.cross(u, e1)
+        e2 /= np.linalg.norm(e2)
+
+        # do not move op3, to not move H
+        op3_dir = op3 - p
+        op3_dir /= np.linalg.norm(op3_dir)
+
+        theta = np.arccos(-1.0 / 3.0)
+
+        r = 0.15 * unit.nanometer
+
+        oxygens = []
+        for phi in (0.0, 2 * np.pi / 3, 4 * np.pi / 3):
+            v = np.cos(theta) * u + np.sin(theta) * (
+                np.cos(phi) * e1 + np.sin(phi) * e2
+            )
+            oxygens.append(v)
+
+        oxygens.sort(key=lambda v: np.dot(v, op3_dir))
+
+        pos[OP1] = p + r * oxygens[0]
+        pos[OP2] = p + r * oxygens[1]
+
+    with open(outfile, "w") as f:
+        PDBFile.writeFile(pdb.topology, pos, f)
+
+    # remove OpenMM-generated CONECT records and restore originals
+    with open(outfile) as f:
+        lines = [line for line in f if not line.startswith("CONECT")]
+
+    with open(outfile, "w") as f:
+        f.writelines(lines)
+        f.writelines(original_conect)

@@ -1,8 +1,10 @@
 from .pipeline_steps import (
+    remove_op3,
     run_tleap,
     run_pdbfixer,
     write_reorderd_pdb,
     write_pdb_with_connect,
+    fix_phosphate_pdb,
 )
 
 targets = {"HOP3", "OP3"}
@@ -24,7 +26,10 @@ def run_pipeline(basename):
     Temporary PDB files need to be written to disk at each step. StringIO was tested.
     """
 
-    # Step 1
+    # Step 0 - remove OP3
+    remove_op3(f"{basename}_protein.pdb", f"{basename}_protein_00.pdb")
+
+    # Step 1 - run tleap to add OP3
     run_tleap(basename, f"{basename}_protein_01.pdb")
 
     # Step2 - get standard pdb file format with chains via pdbfixer
@@ -40,7 +45,11 @@ def run_pipeline(basename):
 
     # Step 5 -  add CONECT for OP3/HOP3 and P
     write_pdb_with_connect(
-        f"{basename}_protein_04.pdb", f"{basename}_protein_fixed.pdb", targets
+        f"{basename}_protein_04.pdb", f"{basename}_protein_05.pdb", targets
+    )
+
+    fix_phosphate_pdb(
+        f"{basename}_protein_05.pdb", f"{basename}_protein_fixed.pdb", thresh=1
     )
 
     return f"{basename}_protein_fixed.pdb"
