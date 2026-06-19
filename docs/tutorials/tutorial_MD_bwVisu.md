@@ -6,6 +6,8 @@ This tutorial will guide you through running short Molecular Dynamics Simulation
 
 This tutorial is intended as a follow up to a structure prediction using either [AlphaFold](/docs/tutorials/tutorial_AF_bwVisu.md) or [Boltz](/docs/tutorials/tutorial_Boltz_bwVisu.md). 
 
+Note that only proteins, DNA and small molecules can be treated with this workflow. If you have more complex systems, [contact us](../contact.md) to discuss a solution.
+
 ### Step 1: Access bwVisu and Start Jupyter
 
 Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel="noopener">https://bwvisu.bwservices.uni-heidelberg.de/</a> and log in with your credentials and one-time password. 
@@ -30,7 +32,7 @@ Next all required files need to be present in the same directory as your predict
 Make sure that the output of your structure prediction is in the same directory as the `Molecular_Dynamics.ipynb` notebook. 
 
 - if you ran an **AlphaFold** prediction, you just need the `.cif` file
-- if you ran a **Boltz** prediction, you need the `.cif` file and the input `.yaml` file
+- if you ran a **Boltz** prediction with small molecules present, you need the `.cif` file and the input `.yaml` file
 
 It should look like this:
 

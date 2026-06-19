@@ -1,12 +1,12 @@
 from Bio.PDB import PDBParser, PDBIO
 
 
-def load_pdb(pdb_file):
+def load_pdb(input_pdb):
     parser = PDBParser(QUIET=True)
-    return parser.get_structure("x", pdb_file)
+    return parser.get_structure("x", input_pdb)
 
 
-def save_pdb(structure, file_name):
+def save_pdb(structure, output_pdb):
     io = PDBIO()
     io.set_structure(structure)
-    io.save(file_name)
+    io.save(output_pdb)
