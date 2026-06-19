@@ -149,6 +149,9 @@ After this, the analysis should run without any errors. Explanations of the outp
 
 To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
+You can also further analyze the structure using the Swissmodel Structure Assessent server:
+<a href="https://swissmodel.expasy.org/assess" target="_blank" rel="noopener">https://swissmodel.expasy.org/assess</a>
+
 If you need more assistance with the analysis, feel free to [contact us](../contact.md).
 
 ### References
