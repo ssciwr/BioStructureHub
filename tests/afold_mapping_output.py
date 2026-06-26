@@ -5,10 +5,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/"
 
 output_fasta = OUTPUT_DIR / "1BT0_A_seqs.fasta"
-reference_fasta = REPO_ROOT / "references/mapping/1BT0_A_seqs.fasta"
+reference_fasta = REPO_ROOT / "references/afold/mapping/1BT0_A_seqs.fasta"
 
 output_json = OUTPUT_DIR / "1BT0_A_alignment.json"
-reference_json = REPO_ROOT / "references/mapping/1BT0_A_alignment.json"
+reference_json = REPO_ROOT / "references/afold/mapping/1BT0_A_alignment.json"
 
 
 def test_output_fasta_exists():

@@ -4,10 +4,10 @@ from tests.utils import prepare_file
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
-SRC_fasta = REPO_ROOT / "references" / "mapping" / "1BT0_A_seqs.fasta"
+SRC_fasta = REPO_ROOT / "references" / "afold" / "mapping" / "1BT0_A_seqs.fasta"
 DST_fasta = REPO_ROOT / "notebooks" / "1BT0_A_seqs.fasta"
 
-SRC_json = REPO_ROOT / "references" / "mapping" / "1BT0_A_alignment.json"
+SRC_json = REPO_ROOT / "references" / "afold" / "mapping" / "1BT0_A_alignment.json"
 DST_json = REPO_ROOT / "notebooks" / "1BT0_A_alignment.json"
 
 
