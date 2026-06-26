@@ -4,22 +4,12 @@ from tests.utils import prepare_file
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
-SRC_fasta = REPO_ROOT / "references" / "afold" / "mapping" / "1BT0_A_seqs.fasta"
-DST_fasta = REPO_ROOT / "notebooks" / "1BT0_A_seqs.fasta"
-
-SRC_json = REPO_ROOT / "references" / "afold" / "mapping" / "1BT0_A_alignment.json"
-DST_json = REPO_ROOT / "notebooks" / "1BT0_A_alignment.json"
+SRC_cif = REPO_ROOT / "references" / "afold" / "mapping" / "1BT0_A.cif"
+DST_cif = REPO_ROOT / "notebooks" / "1BT0_A.cif"
 
 
-def test_prepare_fasta():
+def test_prepare_cif():
     """Ensure reference Boltz input files are copied for prediction notebook."""
-    prepare_file(SRC_fasta, DST_fasta)
+    prepare_file(SRC_cif, DST_cif)
 
-    assert DST_fasta.exists()
-
-
-def test_prepare_a3m():
-    """Ensure reference Boltz input files are copied for prediction notebook."""
-    prepare_file(SRC_json, DST_json)
-
-    assert DST_json.exists()
+    assert DST_cif.exists()

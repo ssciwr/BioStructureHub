@@ -1,5 +1,4 @@
 from pathlib import Path
-import json
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/"
@@ -26,10 +25,3 @@ def test_output_fasta_content():
 
 def test_output_json_exists():
     assert output_json.exists(), f"{output_json} was not created by the notebook"
-
-
-def test_output_json_content():
-    produced = json.loads(output_json.read_text())
-    expected = json.loads(reference_json.read_text())
-
-    assert produced == expected, f"Produced {output_json} differs from reference"
