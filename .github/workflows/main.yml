@@ -70,3 +70,7 @@ jobs:
       run: |  
         python -m pytest --nbval  notebooks/RFDiffusion.ipynb tests/rfdiffusion_output.py
 
+    - name: Run PLM-Interact
+      run: |  
+        python -m pytest --nbval  notebooks/PLM-Interact.ipynb 
+
