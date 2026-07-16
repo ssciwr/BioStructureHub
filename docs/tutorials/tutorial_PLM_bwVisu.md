@@ -40,7 +40,7 @@ Now we need to define a working directory. These will contain all files necessar
 
 
 #### Input Sequences in `.csv` Format
-PLM-interact reads the input sequence pairs from a `.csv` file. More information can be found <a href="https://github.com/liudan111/PLM-interact/tree/main#1-ppi-inference-with-multi-gpus" target="_blank" rel="noopener">here</a>.
+PLM-interact reads the input sequence pairs from a `.csv` file. More information can be found <a href="https://github.com/liudan111/PLM-interact/tree/main#1-ppi-inference-with-multi-gpus" target="_blank" rel="noopener">here</a>. We also provide an example in our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/references/PLM" target="_blank" rel="noopener">github</a>.
 
 | query   | text |
 | -------- | ------- |
