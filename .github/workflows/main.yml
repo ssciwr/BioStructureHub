@@ -72,5 +72,6 @@ jobs:
 
     - name: Run PLM-Interact
       run: |  
-        python -m pytest --nbval  notebooks/PLM-Interact.ipynb 
+        python -m pytest --nbval tests/PLM_prepare.py notebooks/PLM-interact.ipynb tests/PLM_output.py 
+
 
