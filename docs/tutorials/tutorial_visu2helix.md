@@ -1,7 +1,7 @@
 # Transition from bwVisu to bwForCluster Helix
 
 Welcome to the bwVisu to Helix transitioning tutorial! 
-While this tutorial can be used for all of the methods covered in our bwVisu tutorial, we start with <a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz-2</a>
+While this tutorial can be used for all of the methods covered in our bwVisu tutorial, we start with <a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz-2</a>.
 
 ## Preparation: Get Access to Helix
 
@@ -12,9 +12,9 @@ Plan some time for the Rechenvorhaben to be processed before you start your calc
 
 To login to the Helix cluster, you can follow the [Login Tutorial](https://wiki.bwhpc.de/e/Registration/Login) on the bwHPC Wiki, and check the [extra information](https://wiki.bwhpc.de/e/Helix/Login) for Helix. You might find this [login example](https://wiki.bwhpc.de/e/Helix/Login#Login_Example) helpful.
 
-Now you are in your `$HOME` directory, your space on the HPC cluster. To see which files and directories are in your `$HOME` directory you can use the [ls command](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/). You will see the same files and directories as in the bwVisu file browser.
+Now you are in your `$HOME` directory, your space on the HPC cluster. To see which files and directories are in your `$HOME` directory you can use the [`ls` command](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/). You will see the same files and directories as in the bwVisu file browser.
 
-To change the directory from your home to any directory you see now, use the [cd command](https://linuxize.com/post/linux-cd-command/). Find your `$WORKDIR` that you created when following the [Boltz-2 tutorial](tutorial_Boltz_bwVisu.md). You can use the ls command again, to verify that all your previous files are here.
+To change the directory from your home to any directory you see now, use the [`cd` command](https://linuxize.com/post/linux-cd-command/). Find your `$WORKDIR` that you created when following the [Boltz-2 tutorial](tutorial_Boltz_bwVisu.md). You can use the `ls` command again, to verify that all your previous files are here.
 
 ## Adapt the MSA Run File
 
@@ -41,13 +41,13 @@ colabfold_search  \
     "/mnt/sds-hd/sd25g005/boltz/localcolabfold" \
     "{path to your results}" \
 ```
-This file loads relevant [modules](https://wiki.bwhpc.de/e/Environment_Modules) from the helix library. Then it activates the shared conda environment with all python packages provided by the Bio-Structure Hub. This shared environment is added to the `$PATH`, i.e. to the list of known directories to look for files to execute. Finally it runs the colabold search on your input file. This is the final program call, everything else is preparation so that this works flawlessly.
+This file loads relevant [modules](https://wiki.bwhpc.de/e/Environment_Modules) from the helix library. Then it activates the shared conda environment with all python packages provided by the Bio-Structure Hub. This shared environment is added to the `$PATH`, i.e. to the list of known directories to look for files to execute. Finally it runs the colabfold search on your input file. This is the final program call, everything else is preparation so that this works flawlessly.
 
 ### Add Slurm Information
 
 One thing that is missing here, is the information on which GPU to use. In case of bwVisu, this is done by selecting a GPU when starting bwVisu (see [Boltz-2 tutorial, step 3](tutorial_Boltz_bwVisu.md#step-3-connect-to-bwvisu-and-start-jupyter)). That is because the Jupyter instance is started directly on the GPU you choose. 
 
-Now with `ssh` acces to Helix, we have access to all the ressources that Helix has to offer (see list [here](https://wiki.bwhpc.de/e/Helix/Hardware)) the we need to add that information to our run file, so we end up using the ressources we want.
+Now with `ssh` acces to Helix, we have access to all the ressources that Helix has to offer (see list [here](https://wiki.bwhpc.de/e/Helix/Hardware)) and we need to add that information to our run file, so we end up using the ressources we want.
 
 The ressoure allocation is done by [Slurm](https://wiki.bwhpc.de/e/Helix/Slurm). To use resources similar to bwVisu, we can change the start of our run file to:
 
@@ -179,6 +179,6 @@ Save your run file and rename again to `.slurm`. Submit it using `sbatch`, and m
 The output files will again be in your workspace, which you can locate using `ws_find`.
 
 ## After Your Calculation
-Once you are done with your calculation(s) you need to store your output data. There are two options
-- you can copy the files to your local computer using the scp command for blueprints check: [https://wiki.bwhpc.de/e/Data_Transfer/SCP](https://wiki.bwhpc.de/e/Data_Transfer/SCP).
-- you can copy the files on a shared directory of the SDS@HD For more information see: [https://wiki.bwhpc.de/e/SDS@hd/Access#Access_from_a_bwHPC_Cluster](https://wiki.bwhpc.de/e/SDS@hd/Access#Access_from_a_bwHPC_Cluster)
+Once you are done with your calculation(s) you need to store your output data. There are two options:  
+- you can copy the files to your local computer using the scp command for blueprints check: [https://wiki.bwhpc.de/e/Data_Transfer/SCP](https://wiki.bwhpc.de/e/Data_Transfer/SCP)  
+- you can copy the files on a shared directory of the SDS@HD For more information see: [https://wiki.bwhpc.de/e/SDS@hd/Access#Access_from_a_bwHPC_Cluster](https://wiki.bwhpc.de/e/SDS@hd/Access#Access_from_a_bwHPC_Cluster)  
