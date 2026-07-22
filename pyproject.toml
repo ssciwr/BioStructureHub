@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=82.0.1", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -24,7 +24,7 @@ dependencies = [
 [project.optional-dependencies]
 docs = [
     "mkdocs<2.0",
-    "mkdocs-material<9.0",
+    "mkdocs-material<10.0",
     "mkdocs-callouts",
     "mkdocs-blog-plugin",
 ]

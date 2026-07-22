@@ -5,12 +5,14 @@ from typing import Any, Dict
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/boltz_test"
 
-output_yaml = OUTPUT_DIR / "input_file.yaml"
-reference_yaml = REPO_ROOT / "references/boltz/input_file.yaml"
+output_yaml = OUTPUT_DIR / "insulin.yaml"
+reference_yaml = REPO_ROOT / "references/boltz/insulin.yaml"
 
 output_sh = OUTPUT_DIR / "run.sh"
 reference_sh = REPO_ROOT / "references/boltz/run.sh"
 
+output_msa_sh = OUTPUT_DIR / "run_msa.sh"
+reference_msa_sh = REPO_ROOT / "references/boltz/run_msa.sh"
 
 MARKER = "boltz_test"
 
@@ -28,6 +30,18 @@ def normalize_msa_paths(yaml_dict: Dict[str, Any], marker: str) -> Dict[str, Any
             # replace backslashes in the suffix only to please Windows
             protein["msa"] = marker + suffix.replace("\\", "/")
     return yaml_dict
+
+
+def test_run_msa_sh_exists():
+    assert output_msa_sh.exists(), f"{output_msa_sh} was not created by the notebook"
+
+
+def test_run_msa_sh_content():
+    produced_text = normalize_text_paths(output_msa_sh.read_text(), [MARKER])
+    expected_text = normalize_text_paths(reference_msa_sh.read_text(), [MARKER])
+    assert produced_text == expected_text, (
+        f"Produced {output_msa_sh} differs from reference"
+    )
 
 
 def test_run_sh_exists():

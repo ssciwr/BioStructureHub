@@ -56,7 +56,7 @@ jobs:
 
     - name: Run Boltz Inference notebook
       run: |  
-        python -m pytest --nbval notebooks/boltz_input.ipynb tests/boltz_output.py
+        python -m pytest --nbval tests/boltz_prepare_run.py notebooks/Boltz_w_mmseqs.ipynb tests/boltz_output.py
 
     - name: Run Boltz Analysis notebook
       run: |  

@@ -15,3 +15,11 @@
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
     height: 3.5rem;
 }
+/* If you prefer the class selector (Material also adds .md-dark) */
+.md-dark img.invertable {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+[data-md-color-scheme="slate"] img.invertable {
+  filter: invert(1) hue-rotate(180deg);
+}
