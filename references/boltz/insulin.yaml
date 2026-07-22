@@ -1,0 +1,7 @@
+
+version: 1
+sequences:
+  - protein:
+      id: [A] 
+      sequence: MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN
+      msa: /home/hd/hd_hd/hd_aq354/boltz_test/sp_P01308_INS_HUMAN_Insulin_OS_Homo_sapiens_OX_9606_GN_INS_PE_1_SV_1.a3m

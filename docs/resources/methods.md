@@ -1,4 +1,4 @@
-# Methods and Access
+# Resources: Methods and Access
 
 We offer a range of resources from general structure prediction methods to specialized tools. These can be accessed on your local computer, using cloud solutions, or in high-performance computing environments.
 

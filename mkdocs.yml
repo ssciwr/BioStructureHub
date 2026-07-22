@@ -1,6 +1,6 @@
 site_name: Bio-Structure Hub
 repo_url: https://github.com/ssciwr/BioStructureHub/
-
+edit_url: null
 
 
 #=======    Theme Settings   =====
@@ -41,15 +41,16 @@ theme:
 #=======    Website Navigation settings   =====
 nav:
   - Home: index.md
-  - About: about.md
-  - News:
-    - blog/index.md
+  - Who we are: 
+    - about.md
+    - projects.md
+    - cite.md
+    - News:
+      - blog/index.md
   - What we offer: 
     - services/service.md
     - services/collab.md
     - services/teaching.md
-  - Projects: projects.md
-  - Resources: 
     - resources/methods.md
     - resources/learning.md
   - Tutorials: 
