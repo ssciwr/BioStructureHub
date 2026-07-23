@@ -70,7 +70,7 @@ Underneath the Slurm information, add the following to your file:
 ws_allocate your_work_space 30
 RESULTS_DIR=`ws_find your_work_space`
 ```
-This creates a new workspace, called `your_work_space` (feel free to chose a more descriptive name) for 30 days. We can store the location of `your_work_space` in the variable `$RESULTS_DIR` to use it later when we call colabfold.
+This creates a new workspace, called `your_work_space` (feel free to chose a more descriptive name) for 30 days. We can store the location of `your_work_space` in the variable `$RESULTS_DIR` to use it later when we call colabfold. To tell colabfold to write the results to the workspace, change the final line in the run script to `$RESULTS_DIR \`.
 
 Now the final file should look like that:
 
