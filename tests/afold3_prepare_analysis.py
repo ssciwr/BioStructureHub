@@ -3,7 +3,7 @@ from tests.utils import prepare_results
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-SRC = REPO_ROOT / "references" / "afold" / "output_gpu"
+SRC = REPO_ROOT / "references" / "afold3" / "output_gpu"
 DST = REPO_ROOT / "notebooks" / "afold_test" / "output_gpu"
 
 
