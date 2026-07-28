@@ -55,7 +55,7 @@ Next all required files need to be uploaded. This includes the notebooks from ou
 
 Note that the AlphaFold 3 parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your working directory, such as `/af3models`. 
 
-![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: .invertable style="height:95px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_AF3_params.png){: .invertable style="height:95px;width:268px"}
 
 After the upload, you can see your files in the file browser on the left.
 
@@ -68,14 +68,14 @@ Open `Afold_Alignment_CPU.ipynb` and execute the cells in the notebook to start 
 
 Before starting your AlphaFold 3 alignment you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_MSA_input.png){: .invertable style="height:112px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_AF3_MSA_input.png){: .invertable style="height:112px;width:268px"}
 
 
 #### Verify Output 
 
 In the output directory, there should be a second `.json` file in the `output/test` directory. This includes all the information from the input file and the results of the MSA. 
 
-![Screenshot](../images/tutorial/bwVisu_Afold_json.png){: .invertable style="height:89px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_AF3_json.png){: .invertable style="height:89px;width:268px"}
 
 
 You can now close this interactive session session on bwVisu, as the CPU is no longer needed, and move to the second step.
@@ -110,13 +110,13 @@ Execute the cells in the notebook to continue your AlphaFold run!
 
 Before starting your AlphaFold 3 diffusion you should see the following files in your working directory:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_GPU_input.png){: .invertable style="height:159px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_AF3_GPU_input.png){: .invertable style="height:159px;width:268px"}
 
 #### Verify Output
 
 You should see the AlphaFold output files:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_GPU_output.png){:.invertable  style="height:335px;width:268px"}
+![Screenshot](../images/tutorial/bwVisu_AF3_GPU_output.png){:.invertable  style="height:335px;width:268px"}
 
 By default AlphaFold 3 creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
 The best model is presented in the output directory as well, with its structure file and confidence descriptions. The latter are needed to judge the quality of the prediction.
@@ -143,7 +143,7 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 Open `Afold_Confidence_Levels.ipynb` and select the `afold3` kernel. You can verify the kernel in the top right corner of your JupyterLab instance:
 
-![Screenshot](../images/tutorial/bwVisu_Afold_kernel.png){: .invertable style="width:232px"} 
+![Screenshot](../images/tutorial/bwVisu_AF3_kernel.png){: .invertable style="width:232px"} 
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
