@@ -1,6 +1,6 @@
 # AlphaFold 3 on bwVisu
 
-Welcome to the AlphaFold Tutorial for bwVisu! 
+Welcome to the AlphaFold 3 Tutorial for bwVisu! 
 
 This tutorial will guide you through running <a href="https://github.com/google-deepmind/alphafold3" target="_blank" rel="noopener">AlphaFold 3</a> on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
@@ -18,7 +18,7 @@ For technical questions regarding the high performance cluster, see <a href="htt
 
 ### Step 2: Obtain Model Weights from AlphaFold 
 
-Each user needs to individually obtain the model weights for AlphaFold3. Download the model weights from AlphaFold using this form:  
+Each user needs to individually obtain the model weights for AlphaFold 3. Download the model weights from AlphaFold using this form:  
 
 <a href="https://forms.gle/svvpY4u2jsHEwWYS6" target="_blank" rel="noopener">https://forms.gle/svvpY4u2jsHEwWYS6</a> 
 
@@ -26,7 +26,7 @@ Note that this can take up to a few days!
 
 !!! danger  "Legal Note"
 
-    Please note that your use of AlphaFold is subject to the terms and conditions outlined in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md" target="_blank" rel="noopener">https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md</a>. You are responsible for ensuring you comply with these terms.
+    Please note that your use of AlphaFold 3 is subject to the terms and conditions outlined in the <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md" target="_blank" rel="noopener">https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md</a>. You are responsible for ensuring you comply with these terms.
 
 ## Part 1: Alignment
 
@@ -53,7 +53,7 @@ Next all required files need to be uploaded. This includes the notebooks from ou
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
-Note that the AlphaFold parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your working directory, such as `/af3models`. 
+Note that the AlphaFold 3 parameter file is zipped as `af3.bin.zst`. Unpack the file to obtain `af3.bin`. This file then needs to be uploaded to a directory in your working directory, such as `/af3models`. 
 
 ![Screenshot](../images/tutorial/bwVisu_Afold_params.png){: .invertable style="height:95px;width:268px"}
 
@@ -118,7 +118,7 @@ You should see the AlphaFold output files:
 
 ![Screenshot](../images/tutorial/bwVisu_Afold_GPU_output.png){:.invertable  style="height:335px;width:268px"}
 
-By default AlphaFold creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
+By default AlphaFold 3 creates 5 samples from one seed, and sorts them in individual directories. Their ranking scores are reported in a csv table.
 The best model is presented in the output directory as well, with its structure file and confidence descriptions. The latter are needed to judge the quality of the prediction.
 
 
@@ -147,7 +147,7 @@ Open `Afold_Confidence_Levels.ipynb` and select the `afold3` kernel. You can ver
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
-To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pLDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
+To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pLDDT in "classic" AlphaFold 2 colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
 You can also further analyze the structure using the Swissmodel Structure Assessent server:
 <a href="https://swissmodel.expasy.org/assess" target="_blank" rel="noopener">https://swissmodel.expasy.org/assess</a>
