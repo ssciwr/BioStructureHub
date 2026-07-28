@@ -5,6 +5,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
 
 DIRS = {
+    "ALPHAFOLD2_WORKING_DIR": NOTEBOOKS_DIR / "alphafold2",
     "ALPHAFOLD_MODEL_DIR": NOTEBOOKS_DIR / "af3models",
     "ALPHAFOLD_WORKING_DIR": NOTEBOOKS_DIR / "afold_test",
     "ALPHAFOLD_RESULTS_DIR": NOTEBOOKS_DIR / "afold_test" / "output",

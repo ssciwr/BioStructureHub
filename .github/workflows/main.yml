@@ -37,6 +37,10 @@ jobs:
     - name: Pre-cache matplotlib font (cross-platform)
       run: |
         python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
+    
+    - name: Run AlphaFold2 prediction notebook
+      run: |
+        python -m pytest --nbval notebooks/AFold2.ipynb tests/afold2_output.py
 
     - name: Run AlphaFold3  Alignment notebook
       run: |
