@@ -12,4 +12,3 @@ run_alphafold.sh -d $ALPHAFOLD_DATABASES \
     -t 2020-05-14 \
     -c full_dbs \
     -m multimer
-    
