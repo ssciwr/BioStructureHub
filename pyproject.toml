@@ -15,6 +15,7 @@ authors = [{name = "Christine Schulz", email = "christine.schulz@iwr.uni-heidelb
 # Runtime dependencies – required for CI
 dependencies = [
     "biopython",
+    "colabfold",
     "matplotlib",
     "numpy",
     "pandas",
