@@ -44,7 +44,7 @@ jobs:
 
     - name: Run AlphaFold2 Analysis notebook
       run: |  
-        python -m pytest tests/afold2_prepare_analysis.py --nbval notebooks/AFold2_Confidence_Levels.ipynb
+        python -m pytest tests/afold2_prepare_analysis.py --nbval notebooks/AFold2_Analysis.ipynb
 
     - name: Run AlphaFold3  Alignment notebook
       run: |
