@@ -121,4 +121,9 @@ jobs:
       - name: Run MD Notebook
         shell: bash -el {0}
         run: |
-          python -m pytest -x --nbval tests/prepare_md.py notebooks/Molecular_Dynamics_ci.ipynb
+          python -m pytest --nbval tests/prepare_md.py notebooks/Molecular_Dynamics_ci.ipynb
+          
+      - name: Run MD Analysis Notebook
+        shell: bash -el {0}
+        run: |
+          python -m pytest --nbval notebooks/MD_Analysis.ipynb
