@@ -126,4 +126,4 @@ jobs:
       - name: Run MD Analysis Notebook
         shell: bash -el {0}
         run: |
-          python -m pytest --nbval notebooks/MD_Analysis.ipynb
+          python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb
