@@ -31,10 +31,7 @@ Choose the Kernel Path to Boltzgen `/mnt/sds-hd/sd25g005/boltzgen/share/jupyter/
 ![Screenshot](../images/tutorial/bwVisu_GPU_Kernel.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
 
-
-
 Click on "Launch". This will bring you to a new screen showing your interactive sessions. Wait for your session to be ready, then click on "Connect to Jupyter". This brings you into a JupyterLab environment.
-
 
 ### Step 3: Set a Working Directory and Upload Files
 
@@ -61,7 +58,7 @@ Now execute the cells in the notebook to start your Boltzgen run!
 
 #### Verify Input
 
-Before starting your Boltz prediction you should see the following files in your working directory:
+Before starting your Boltzgen prediction you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_Boltzgen_input.png){:.invertable  style="width:268px"}
 
@@ -75,7 +72,7 @@ The best models are in`final_ranked_designs`:
 
 ![Screenshot](../images/tutorial/bwVisu_Boltzgen_output.png){: .invertable style="width:268px"}
 
-To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pIDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
+To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pLDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
 
 If you need more assistance with the analysis, feel free to [contact us](../contact.md).
 

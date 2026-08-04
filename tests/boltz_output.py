@@ -1,6 +1,7 @@
 from pathlib import Path
-from tests.utils import normalize_text_paths, load_yaml
-from typing import Any, Dict
+from typing import Any
+
+from tests.utils import load_yaml, normalize_text_paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/boltz_test"
@@ -17,7 +18,7 @@ reference_msa_sh = REPO_ROOT / "references/boltz/run_msa.sh"
 MARKER = "boltz_test"
 
 
-def normalize_msa_paths(yaml_dict: Dict[str, Any], marker: str) -> Dict[str, Any]:
+def normalize_msa_paths(yaml_dict: dict[str, Any], marker: str) -> dict[str, Any]:
     """
     Strip absolute prefixes from msa fields only.
     This is very tailored to the structure of the input YAML produced in the Boltz notebook, but it is sufficient for our testing purposes.
@@ -26,7 +27,7 @@ def normalize_msa_paths(yaml_dict: Dict[str, Any], marker: str) -> Dict[str, Any
         protein = seq.get("protein", {})
         msa = protein.get("msa")
         if msa and marker in msa:
-            prefix, suffix = msa.split(marker, 1)
+            _, suffix = msa.split(marker, 1)
             # replace backslashes in the suffix only to please Windows
             protein["msa"] = marker + suffix.replace("\\", "/")
     return yaml_dict
