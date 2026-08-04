@@ -1,6 +1,7 @@
 # __main__.py
 
 import argparse
+from pathlib import Path
 
 from .RNAprep import run_pipeline
 
@@ -11,7 +12,11 @@ def main():
 
     args = parser.parse_args()
 
-    run_pipeline(args.basename)
+    basename = Path(args.basename)
+    if basename.name != args.basename:
+        parser.error("basename must not contain path separators")
+
+    run_pipeline(basename.name)
 
 
 if __name__ == "__main__":
