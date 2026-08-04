@@ -4,7 +4,7 @@ Both AlphaFold3 and Boltz2 have the option to use an existing 3D structure as a 
 
 ## Boltz2 
 
-In the Boltz input, only a template `.cif` or `.pdb` file and a some information of the chain is needed. The program finds the residues cirectly. For more information see the [Boltz2 documentation on templates](https://github.com/jwohlwend/boltz/blob/main/docs/prediction.md#templates)
+In the Boltz input, only a template `.cif` or `.pdb` file and a some information of the chain is needed. The program finds the residues cirectly. For more information see the [Boltz2 documentation on templates](https://github.com/jwohlwend/boltz/blob/main/docs/prediction.md#templates).
 
 
 ## AlphaFold3
@@ -13,9 +13,9 @@ For AlphaFold3, a `.cif` file is needed. `.pdb` files have to be converted to `.
 
 ![Screenshot](../images/tutorial/AF3mapping_cif.png){:.invertable style="width:473px"}
 
-Additionally, a list of incides in the query and template sequence is required, that defines maping from query residues to template residues. For more information see the [AlphaFold3 documentation on templates](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#structural-templates).
+Additionally, a list of incides in the query and template sequence is required, that defines mapping from query residues to template residues. For more information see the [AlphaFold3 documentation on templates](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#structural-templates).
 
-If you want to use the template locally, only these lists are required. To use templates on the [AlphaFold3 server](https://alphafoldserver.com), a mapping file is required. Both the list of indices and the mapping field can be created using our jupyter notebook : [AFold3_mapping.ipynb](../../notebooks/AFold3_mapping.ipynb).This notebook does not need to be executed on bwVisu, but can run locally on your computer. Or conveniently in Google Colab.
+If you want to use the template locally, only these lists are required. To use templates on the [AlphaFold3 server](https://alphafoldserver.com), a mapping file is required. Both the list of indices and the mapping field can be created using our jupyter notebook [AFold3_mapping.ipynb](../../notebooks/AFold3_mapping.ipynb). This notebook does not need to be executed on bwVisu, but you can run it locally on your computer - or conveniently in [Google Colab](https://colab.research.google.com/github/ssciwr/BioStructureHub/blob/main/notebooks/AFold3_mapping.ipynb).
 <!--- add this link once tutorial goes live -->
 
 ### Using Templates on bwVisu or other local installations
