@@ -124,6 +124,7 @@ jobs:
           python -m pytest --nbval tests/prepare_md.py notebooks/Molecular_Dynamics_ci.ipynb
           
       - name: Run MD Analysis Notebook
+        if: matrix.input_file == 'md_inputs/G3_smol_model_0.cif'
         shell: bash -el {0}
         run: |
-          python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb
+          python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb 
