@@ -4,3 +4,4 @@ The prediction of biomolecular structures is routed in the translation from prot
 
 Embedding the Bio-Structure Hub in the SSC enables, building research software sustainably and in accordance with good scientific practice. This entails on the one hand making use of software engineering tools and methods such as version control, development and production environments, testing frameworks, documentation and release workflows, and a development process, to name a few; and on the other hand, acknowledging that research software is an infrastructure that is the foundation of cutting-edge research, and as such needs to be drafted, designed, operated and maintained in a purposeful manner.
 
+Find our poster for the deRSE here: [https://doi.org/10.5281/zenodo.18922003](https://doi.org/10.5281/zenodo.18922003)
