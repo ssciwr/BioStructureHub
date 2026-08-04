@@ -1,6 +1,6 @@
 from pathlib import Path
-from tests.utils import normalize_text_paths
 
+from tests.utils import normalize_text_paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks" / "PLM_interact"
