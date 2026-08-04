@@ -118,11 +118,11 @@ Once the multisequence alignment is done, you should find the `.a3m` alignment f
 
 ## Run Boltz
 
-Now we will adapt the `run.sh` and `input.yaml` files that controls the Boltz inference calculations. Go to your `$WORKDIR` and look for the exact names of these files.
+Now we will adapt the `run.sh` and input `.yaml` files that controls the Boltz inference calculations. Go to your `$WORKDIR` and look for the exact names of these files.
 
 ### Adapt the `.yaml` file
 
-Open the `input.yaml` file from your bwVisu Tutorial calculation. It should look somewhat like this:
+Open the input `.yaml` file from your bwVisu Tutorial calculation. You can find an example for insulin [here](../../references/boltz/insulin.yaml). It should look somewhat like this:
 
 ```
 version: 1
@@ -160,7 +160,7 @@ Try following the same logic as before and compare to the full file below:
     #SBATCH --ntasks=1
     #SBATCH --time=00:20:00
     #SBATCH --gres=gpu:A100:1,gpumem_per_gpu=40GB
-    #SBATCH --mem=8gb
+    #SBATCH --mem=16gb
 
     RESULTS_DIR=`ws_find your_work_space`
 
@@ -174,6 +174,7 @@ Try following the same logic as before and compare to the full file below:
     ```
 
     - note that we do not re-create the workspace, but just access it. You can fit multiple calculations in one workspace, no need to have multiples.
+    - note that you might have to adapt the amount of `--mem` depending on your sequence length
 
 Save your run file and rename again to `.slurm`. Submit it using `sbatch`, and monitor using `squeue`.
 The output files will again be in your workspace, which you can locate using `ws_find`.
