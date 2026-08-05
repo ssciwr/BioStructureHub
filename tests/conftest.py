@@ -1,5 +1,5 @@
-from pathlib import Path
 import shutil
+from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
@@ -13,6 +13,7 @@ DIRS = {
     "RFDIFFUSION_WORKING_DIR": NOTEBOOKS_DIR / "protein_design_w_RFDiffusion",
     "BINDCRAFT_WORKING_DIR": NOTEBOOKS_DIR / "protein_design_w_Bindcraft",
     "MD_WORKING_DIR": NOTEBOOKS_DIR / "md_inputs",
+    "PLM_INTERACT_WORKING_DIR": NOTEBOOKS_DIR / "PLM_interact",
 }
 
 

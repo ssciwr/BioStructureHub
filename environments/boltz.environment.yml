@@ -2,12 +2,13 @@ name: boltz
 
 channels:
   - conda-forge
+  - bioconda
 
 dependencies:
   - python=3.12
   - matplotlib
   - pandas=2.2
   - seaborn
-
+  - mmseq2
   - pip:
     - boltz==2.2.1
