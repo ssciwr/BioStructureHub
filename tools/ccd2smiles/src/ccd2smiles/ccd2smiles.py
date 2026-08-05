@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """
 ccd2smiles.py
@@ -21,6 +20,7 @@ c1ccccc1
 """
 
 from __future__ import annotations
+
 import sys
 from functools import lru_cache
 from typing import Optional

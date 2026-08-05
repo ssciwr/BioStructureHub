@@ -1,10 +1,10 @@
 from .pipeline_steps import (
-    remove_op3,
-    run_tleap,
-    run_pdbfixer,
-    write_reorderd_pdb,
-    write_pdb_with_connect,
     fix_phosphate_pdb,
+    remove_op3,
+    run_pdbfixer,
+    run_tleap,
+    write_pdb_with_connect,
+    write_reorderd_pdb,
 )
 
 targets = {"HOP3", "OP3"}

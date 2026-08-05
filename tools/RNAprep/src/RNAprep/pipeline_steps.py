@@ -1,11 +1,13 @@
-from pdbfixer import PDBFixer
+import subprocess
+from pathlib import Path
+
+import numpy as np
 from Bio.PDB.Residue import Residue
 from openmm import unit
 from openmm.app import PDBFile
-from pathlib import Path
-import subprocess
+from pdbfixer import PDBFixer
+
 from .pdb_io import load_pdb, save_pdb
-import numpy as np
 
 
 def run_tleap(basename, output_pdb):

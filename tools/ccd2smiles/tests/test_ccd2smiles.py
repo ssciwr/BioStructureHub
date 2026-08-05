@@ -1,6 +1,5 @@
 import pytest
 import requests
-
 from ccd2smiles import ccd_to_smiles
 from ccd2smiles.ccd2smiles import _fetch_smiles
 

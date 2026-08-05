@@ -1,4 +1,4 @@
-from Bio.PDB import PDBParser, PDBIO
+from Bio.PDB import PDBIO, PDBParser
 
 
 def load_pdb(input_pdb):
