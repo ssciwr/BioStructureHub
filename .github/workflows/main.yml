@@ -78,4 +78,64 @@ jobs:
       run: |  
         python -m pytest --nbval tests/PLM_prepare.py notebooks/PLM-interact.ipynb tests/PLM_output.py 
 
+  test_md:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          # Protein with small molecule with smiles
+          - input_file: md_inputs/G3_smol_model_0.cif
+            boltz_input_file: md_inputs/G3_smol_smi.yaml
+          # Protein ion as CCD
+          - input_file: md_inputs/G3_ion_model_0.cif
+            boltz_input_file: md_inputs/G3_ion.yaml
+          # Protein with RNA 
+          - input_file: md_inputs/G3_RNA_model_0.cif
+            boltz_input_file: md_inputs/G3_RNA.yaml
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@fc2d68f6413eb2d87b895e92f8584b5b94a10167 # v3
+        with:
+          environment-file: environments/molecular_dynamics.yml
+          activate-environment: openmm
+          auto-activate-base: false
+
+      - name: Install local tool RNAprep
+        shell: bash -el {0}
+        run: |
+          pip install -e tools/RNAprep
+
+      - name: Install local tool ccd2smiles
+        shell: bash -el {0}
+        run: |
+          pip install -e tools/ccd2smiles
+
+      - name: Run ccd2smiles tests
+        run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate openmm
+          pytest tools/ccd2smiles/tests
+
+      - name: Patch notebook inputs
+        run: |
+          sed \
+            -e 's|__INPUT_FILE__|${{ matrix.input_file }}|g' \
+            -e 's|__BOLTZ_INPUT_FILE__|${{ matrix.boltz_input_file }}|g' \
+            notebooks/Molecular_Dynamics.ipynb > notebooks/Molecular_Dynamics_ci.ipynb
+
+      - name: Run MD Notebook
+        shell: bash -el {0}
+        run: |
+          python -m pytest --nbval tests/prepare_md.py notebooks/Molecular_Dynamics_ci.ipynb
+          
+      - name: Run MD Analysis Notebook
+        if: matrix.input_file == 'md_inputs/G3_smol_model_0.cif'
+        shell: bash -el {0}
+        run: |
+          python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb 
+
+
 
