@@ -152,8 +152,8 @@ def reorder_pdb(structure, targets, new_resname="OHE"):
     for chain in structure.get_chains():
         inserts = []
 
-        for res in list(chain):
-            move = [atom for atom in list(res) if atom.name in targets]
+        for res in chain:
+            move = [atom for atom in res if atom.name in targets]
             if not move:
                 continue
 
@@ -365,7 +365,7 @@ def fix_phosphate_pdb(infile, outfile, thresh=2):
             )
             oxygens.append(v)
 
-        oxygens.sort(key=lambda v: np.dot(v, op3_dir))
+        oxygens.sort(key=lambda v, op3_dir=op3_dir: np.dot(v, op3_dir))
 
         pos[OP1] = p + r * oxygens[0]
         pos[OP2] = p + r * oxygens[1]
