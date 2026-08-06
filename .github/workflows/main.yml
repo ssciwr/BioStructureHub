@@ -74,6 +74,10 @@ jobs:
       run: |  
         python -m pytest --nbval  notebooks/RFDiffusion.ipynb tests/rfdiffusion_output.py
 
+    - name: Run PLM-Interact
+      run: |  
+        python -m pytest --nbval tests/PLM_prepare.py notebooks/PLM-interact.ipynb tests/PLM_output.py 
+
   test_md:
     runs-on: ubuntu-latest
 
@@ -132,8 +136,6 @@ jobs:
         shell: bash -el {0}
         run: |
           python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb 
-    - name: Run PLM-Interact
-      run: |  
-        python -m pytest --nbval tests/PLM_prepare.py notebooks/PLM-interact.ipynb tests/PLM_output.py 
+
 
 
