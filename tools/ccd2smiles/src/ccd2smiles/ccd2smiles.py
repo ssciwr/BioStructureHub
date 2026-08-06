@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 ccd2smiles.py
 
@@ -23,7 +21,6 @@ from __future__ import annotations
 
 import sys
 from functools import lru_cache
-from typing import Optional
 
 import requests
 
@@ -32,7 +29,7 @@ import requests
 # Low‑level fetch – memoised with an LRU cache (default size 1024)
 # ----------------------------------------------------------------------
 @lru_cache(maxsize=1024)
-def _fetch_smiles(ccd_id: str) -> Optional[str]:
+def _fetch_smiles(ccd_id: str) -> str | None:
     """
     Query the RCSB REST API for *ccd_id* and return the canonical SMILES.
 
@@ -67,7 +64,7 @@ def ccd_to_smiles(
     ccd_id: str,
     *,
     refresh: bool = False,
-) -> Optional[str]:
+) -> str | None:
     """
     Translate a CCD identifier into SMILES strings.
 

@@ -319,7 +319,7 @@ def fix_phosphate_pdb(infile, outfile, thresh=2):
         residues = list(chain.residues())
         r1, r2 = residues[0], residues[1]
 
-        if not (r1.name == "OHE"):
+        if r1.name != "OHE":
             continue
 
         # get atom indices for OHE and adjacent residue
