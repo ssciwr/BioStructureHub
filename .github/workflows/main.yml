@@ -38,6 +38,10 @@ jobs:
       run: |
         python -c "import os; os.environ['MPLBACKEND']='Agg'; import matplotlib.pyplot"
 
+    - name: Run AlphaFold3  mapping notebok
+      run: |
+        python -m pytest tests/afold_prepare_mapping.py --nbval notebooks/AFold3_mapping.ipynb tests/afold_mapping_output.py
+
     - name: Run AlphaFold3  Alignment notebook
       run: |
         python -m pytest --nbval notebooks/AFold_Alignment_CPU.ipynb tests/afold_alignment_output.py
