@@ -55,8 +55,9 @@ Before starting your AlphaFold 2 alignment you should see the following files in
 
 #### Verify Output 
 
-In the output directory, there should be a second directory with the same name as your `.fasta` file, in which you find the multi-sequence alignment (MSA), the predicted structure in `.pdb` file format and other information in `.json` format.
+In the output directory, there should be a second directory with the same name as your `.fasta` file, in which you find the multi-sequence alignment (MSA), the predicted structures in `.pdb` file format, additional information on each structure in `.pkl` format, and other information in `.json` format.
 
+You can find the best structure by looking at `ranking_debug.json`, which gives you an average `ptm` and `iptm` and the rank order. The best model will be listed at order `0`. The corresponding structure is in `unrelaxed_model_X_multimer_v3_pred_Y.pdb`. AlphaFold 2 includes a quick MD relaxation for the best model, which you can find in `relaxed_model_X_multimer_v3_pred_Y.pdb`.
 
 ## Part 2: Analysis
 
