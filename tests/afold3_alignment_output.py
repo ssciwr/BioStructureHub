@@ -1,5 +1,6 @@
-from pathlib import Path
 import json
+from pathlib import Path
+
 from tests.utils import normalize_text_paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent

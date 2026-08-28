@@ -1,5 +1,6 @@
 from pathlib import Path
-from tests.utils import normalize_text_paths, load_yaml
+
+from tests.utils import load_yaml, normalize_text_paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/protein_design_w_Boltzgen"

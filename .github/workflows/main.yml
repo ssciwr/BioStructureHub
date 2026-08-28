@@ -46,6 +46,10 @@ jobs:
       run: |  
         python -m pytest tests/afold2_prepare_analysis.py --nbval notebooks/AFold2_Analysis.ipynb
 
+    - name: Run AlphaFold3  mapping notebok
+      run: |
+        python -m pytest tests/afold_prepare_mapping.py --nbval notebooks/AFold3_mapping.ipynb tests/afold_mapping_output.py
+
     - name: Run AlphaFold3  Alignment notebook
       run: |
         python -m pytest --nbval notebooks/AFold3_Alignment_CPU.ipynb tests/afold3_alignment_output.py
@@ -77,4 +81,9 @@ jobs:
     - name: Run RFDiffusion
       run: |  
         python -m pytest --nbval  notebooks/RFDiffusion.ipynb tests/rfdiffusion_output.py
+
+    - name: Run PLM-Interact
+      run: |  
+        python -m pytest --nbval tests/PLM_prepare.py notebooks/PLM-interact.ipynb tests/PLM_output.py 
+
 
