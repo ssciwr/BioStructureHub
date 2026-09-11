@@ -54,7 +54,8 @@ nav:
     - resources/methods.md
     - resources/learning.md
   - Tutorials: 
-    - tutorials/tutorial_AF_bwVisu.md 
+    - tutorials/tutorial_AF2_bwVisu.md 
+    - tutorials/tutorial_AF3_bwVisu.md 
     - tutorials/tutorial_Bindcraft_bwVisu.md
     - tutorials/tutorial_Boltz_bwVisu.md
     - tutorials/tutorial_Boltzgen_bwVisu.md
