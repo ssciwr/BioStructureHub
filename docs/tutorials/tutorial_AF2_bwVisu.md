@@ -22,7 +22,7 @@ Go to <a href="https://bwvisu.bwservices.uni-heidelberg.de/" target="_blank" rel
 
 Choose Jupyter and start a new session. Now you can select the resources you need.
 
-In contrast to Alphafold 3, Alphafold 2 can run in one bwVisu job that needs both CPU and GPU resources allocated. We choos one GPU, and 16 CPU cores. We also need to account for a longer runtime, so we choose 60 minutes. If you want to execute the analysis right after the prediction, you can load the neccessary python libraries by adding `/mnt/sds-hd/sd25g005/colabfold/share/jupyter` to the kernel path.
+In contrast to Alphafold 3, Alphafold 2 can run in one bwVisu job that needs both CPU and GPU resources allocated. We choose one GPU, and 16 CPU cores. We also need to account for a longer runtime, so we choose 60 minutes. If you want to execute the analysis right after the prediction, you can load the neccessary python libraries by adding `/mnt/sds-hd/sd25g005/colabfold/share/jupyter` to the kernel path.
 
 ![Screenshot](../images/tutorial/bwVisu_AF2_resources.png){:.invertable}
 <!--{: style="height:500px;width:750px"}-->
@@ -35,7 +35,7 @@ First we need to define a working directory. That can be your `home` or any dire
 
 ![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
-Next all required files need to be uploaded. This includes the notebooks from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> and the input sequence in `.fasta` format. You can upload these files by clicking on the upload button:
+Next all required files need to be uploaded. This includes the notebooks `AFold2.ipynb` and `AFold2_Analysis.ipynb` from our <a href="https://github.com/ssciwr/BioStructureHub/tree/main/notebooks" target="_blank" rel="noopener">github</a> and the input sequence in `.fasta` format (for example, [this file](https://github.com/ssciwr/BioStructureHub/blob/main/references/boltz/insulin.fasta)). You can upload these files by clicking on the upload button:
 
 ![Screenshot](../images/tutorial/bwVisu_upload.png){: .invertable style="height:111px;width:444px"}
 
