@@ -3,14 +3,13 @@ from pathlib import Path
 from tests.utils import normalize_text_paths
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = REPO_ROOT / "notebooks/afold_test"
+OUTPUT_DIR = REPO_ROOT / "notebooks/alphafold2"
+
+output_sh = OUTPUT_DIR / "run.sh"
+reference_sh = REPO_ROOT / "references/afold2/run.sh"
 
 
-output_sh = OUTPUT_DIR / "run_gpu.sh"
-reference_sh = REPO_ROOT / "references/afold/run_gpu.sh"
-
-
-MARKERS = ["afold_test", "af3models"]
+MARKERS = ["alphafold2"]
 
 
 def test_run_sh_exists():
