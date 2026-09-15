@@ -31,7 +31,7 @@ Click on "Launch". This will bring you to a new screen showing your interactive 
 
 ### Step 3: Set a Working Directory and Upload Files
 
-First we need to define a working directory. That can be your `home` or any directory you create. These will contain all files necessary for the tutorial. A new directory can be created using folder icon on the top left of the file browser:
+First we need to define a working directory. That can be your `home` or any directory you create. These will contain all files necessary for the tutorial. For this tutorial we will create a directory called `alphafold2` A new directory can be created using folder icon on the top left of the file browser:
 
 ![Screenshot](../images/tutorial/bwVisu_newDir.png){: .invertable style="height:111px;width:444px"}
 
