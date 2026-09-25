@@ -137,5 +137,32 @@ jobs:
         run: |
           python -m pytest --nbval tests/prepare_md_output.py notebooks/MD_Analysis.ipynb 
 
+  test_docking:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@fc2d68f6413eb2d87b895e92f8584b5b94a10167 # v3
+        with:
+          environment-file: environments/docking.yml
+          activate-environment: docking
+          auto-activate-base: false
+
+      - name: Install local tool translate2pdbqt
+        shell: bash -el {0}
+        run: |
+          pip install -e tools/translate2pdbqt
 
 
+      - name: Run Box Visualization Notebook
+        shell: bash -el {0}
+        run: |
+          python -m pytest --nbval  tests/docking_prepare_box.py notebooks/Box_Visualization.ipynb tests/docking_box_output.py
+      - name: Run Docking Notebook
+        shell: bash -el {0}
+        run: |
+          python -m pytest --nbval  tests/docking_prepare_docking.py notebooks/Docking.ipynb
