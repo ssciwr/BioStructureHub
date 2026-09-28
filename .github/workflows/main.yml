@@ -139,10 +139,6 @@ jobs:
 
   test_docking:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        include:
     steps:
       - uses: actions/checkout@v4
 
@@ -157,6 +153,12 @@ jobs:
         run: |
           pip install -e tools/translate2pdbqt
 
+
+      - name: Run ctranslate2pdbqt tests
+        run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate docking
+          python -m pytest tools/translate2pdbqt/tests
 
       - name: Run Box Visualization Notebook
         shell: bash -el {0}

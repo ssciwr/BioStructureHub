@@ -5,6 +5,8 @@ A tiny helper to convert PDB, CIF, and SMILES to PDBQT.
 
 """
 
+import os
+
 from openbabel import pybel
 
 # pybel.ob.obErrorLog.SetOutputLevel(0)
@@ -17,11 +19,14 @@ def pdb_to_pdbqt(pdb_file, pdbqt_file):
     ----------
     pdb_file : str
         Path to the input PDB file.
+
     pdbqt_file : str
         Path to the output PDBQT file.
     """
 
-    ## TODO check if outputfile exists
+    if os.path.exists(pdbqt_file):
+        return pdbqt_file
+
     mol = next(pybel.readfile("pdb", pdb_file))
     mol.addh()
     mol.calccharges(model="gasteiger")
@@ -49,10 +54,14 @@ def cif_to_pdbqt(cif_file, pdbqt_file):
     ----------
     cif_file : str
         Path to the input CIF file.
+
     pdbqt_file : str
         Path to the output PDBQT file.
     """
-    ## TODO check if outputfile exists
+
+    if os.path.exists(pdbqt_file):
+        return pdbqt_file
+
     mol = next(pybel.readfile("cif", cif_file))
     mol.addh()
     mol.calccharges(model="gasteiger")
@@ -89,6 +98,9 @@ def smiles_to_pdbqt(smiles, pdbqt_file, pH=7.4):
     pH: float
         Protonation at given pH.
     """
+    if os.path.exists(pdbqt_file):
+        return pdbqt_file
+
     molecule = pybel.readstring("smi", smiles)
     # add hydrogens at given pH
     molecule.OBMol.CorrectForPH(pH)
