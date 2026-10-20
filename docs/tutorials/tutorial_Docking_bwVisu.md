@@ -1,6 +1,6 @@
 # Small Molecule Docking on bwVisu
 
-Welcome to the Dokcing Tutorial for bwVisu! 
+Welcome to the Docking Tutorial for bwVisu! 
 
 This tutorial will guide you through running quick docking example on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
@@ -53,7 +53,7 @@ Finally your input files should look like:
 
 ### Step 5: Start the Simulation
 
-Open `Doocking.ipynb`, add your `.pdb` or`.cif` file, as well as your `.csv` file in the notebook and then execute all the cells in the notebook to start your Docking run! Remember to set the kernel in the top right of the notebook to "docking".
+Open `Docking.ipynb`, add your `.pdb` or`.cif` file, as well as your `.csv` file in the notebook and then execute all the cells in the notebook to start your Docking run! Remember to set the kernel in the top right of the notebook to "docking".
 
 
 ### References
