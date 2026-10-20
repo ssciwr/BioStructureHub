@@ -1,0 +1,5 @@
+name,smiles,link
+Indinavir,CC(C)(C)NC(=O)[C@@H]1CN(Cc2cccnc2)CCN1C[C@@H](O)C[C@@H](Cc1ccccc1)C(=O)N[C@H]1c2ccccc2C[C@H]1O,https://www.ebi.ac.uk/chebi/CHEBI:44032
+Saquinavir,[H][C@@]12CCCC[C@]1([H])CN(C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)[C@H](CC(N)=O)NC(=O)c1ccc3ccccc3n1)[C@H](C(=O)NC(C)(C)C)C2,https://www.ebi.ac.uk/chebi/CHEBI:63621
+Ritonavir,CC(C)c1nc(CN(C)C(=O)N[C@H](C(=O)N[C@@H](Cc2ccccc2)C[C@H](O)[C@H](Cc2ccccc2)NC(=O)OCc2cncs2)C(C)C)cs1,https://www.ebi.ac.uk/chebi/CHEBI:45409
+Darunavir,[H][C@]12OCC[C@@]1([H])[C@@H](OC(=O)N[C@@H](Cc1ccccc1)[C@H](O)CN(CC(C)C)S(=O)(=O)c1ccc(N)cc1)CO2,https://www.ebi.ac.uk/chebi/CHEBI:367163

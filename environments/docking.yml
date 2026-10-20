@@ -1,0 +1,16 @@
+name: docking
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - pip
+  - biopython
+  - nbval
+  - nglview
+  - numpy
+  - openbabel
+  - pandas
+  - pytest
+  - vina
+
