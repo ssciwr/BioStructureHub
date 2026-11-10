@@ -27,6 +27,7 @@ docs = [
     "mkdocs-material<10.0",
     "mkdocs-callouts",
     "mkdocs-blog-plugin",
+    "mkdocs-pdf",
 ]
 test = [
     "pytest",

@@ -88,3 +88,4 @@ plugins:
       blog_toc: true
   - search
   - callouts
+  - mkdocs-pdf
