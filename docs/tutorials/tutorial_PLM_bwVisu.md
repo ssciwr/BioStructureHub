@@ -63,7 +63,7 @@ Open `PLM_interact.ipynb` and  execute the cells in the notebook to start your B
 
 #### Verify Input
 
-Before starting your Boltz prediction you should see the following files in your working directory:
+Before starting your PLM calculation you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_PLM_input.png){:.invertable  style="width:377px"}
 
