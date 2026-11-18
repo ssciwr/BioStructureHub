@@ -59,7 +59,7 @@ Note that the AlphaFold parameter file is zipped as `af3.bin.zst`. Unpack the fi
 
 After the upload, you can see your files in the file browser on the left.
 
-### Step 5: Start the Alinment 
+### Step 5: Start the Alignment 
 
 Open `Afold_Alignment_CPU.ipynb` and execute the cells in the notebook to start your AlphaFold run!
 
@@ -78,7 +78,7 @@ In the output directory, there should be a second `.json` file in the `output/te
 ![Screenshot](../images/tutorial/bwVisu_Afold_json.png){: .invertable style="height:89px;width:268px"}
 
 
-You can now close this interactive session session on bwVisu, as the CPU is no longer needed, and move to the second step.
+You can now close this interactive session on bwVisu, as the CPU is no longer needed, and move to the second step.
 
  
 
@@ -147,7 +147,7 @@ Open `Afold_Confidence_Levels.ipynb` and select the `afold3` kernel. You can ver
 
 After this, the analysis should run without any errors. Explanations of the output are provided in the notebook.
 
-To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pLDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows to visualize more and less confident areas of the predicted structure.
+To visualize your predicted structures, download them to your computer and open the files with programs such as <a href="https://pymol.org/" target="_blank" rel="noopener">Pymol</a> or <a href="https://www.cgl.ucsf.edu/chimerax/" target="_blank" rel="noopener">ChimeraX</a>. To visualize the pLDDT in "classic" AlphaFold colors, use <a href="https://kpwulab.com/2023/03/09/color-alphafold2s-plddt/" target="_blank" rel="noopener">this</a> quick tutorial. This allows you to visualize more and less confident areas of the predicted structure.
 
 You can also further analyze the structure using the Swissmodel Structure Assessent server:
 <a href="https://swissmodel.expasy.org/assess" target="_blank" rel="noopener">https://swissmodel.expasy.org/assess</a>

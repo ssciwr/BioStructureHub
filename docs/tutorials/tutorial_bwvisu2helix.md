@@ -23,7 +23,7 @@ To change the directory from your home to any directory you see now, use the [`c
 In the tutorial, we first calculated the multi-sequence alignment (MSA) using MMseqs2 for each protein sequence. To do that, we wrote an input file, that we simply called `run_msa.sh`.
 To look at the contents of the files, we need a text editor. Choose your favourite from the [list](https://wvuhpc.github.io/2018-Lesson_1/03-text-editors/index.html) and look at the contents of `run_msa.sh`.
 !!! note "Hint:"
-     You can open and change files via the bwVisu file browser, too. Another option to look at your data via a vile browser is to mount a folder (e.g. your home) on your local computer: [Recommended Setup](https://wiki.bwhpc.de/e/Data_Transfer#Recommended_Setup).
+     You can open and change files via the bwVisu file browser, too. Another option to look at your data via a file browser is to mount a folder (e.g. your home) on your local computer: [Recommended Setup](https://wiki.bwhpc.de/e/Data_Transfer#Recommended_Setup).
 
 It should look like that:
 
@@ -49,7 +49,7 @@ This file loads relevant [software modules](https://wiki.bwhpc.de/e/Environment_
 
 ### Add Slurm Information
 
-One thing that is missing here, is the information on which GPU to use. In case of bwVisu, this is done by selecting a GPU when starting bwVisu (see [Boltz-2 tutorial, step 3](tutorial_Boltz_bwVisu.md#step-3-connect-to-bwvisu-and-start-jupyter)). That is because the Jupyter instance is started directly on the GPU you choose. 
+One thing that is missing here, is the information on which GPU to use. In case of bwVisu, this is done by selecting a GPU when starting bwVisu (see [Boltz-2 tutorial, step 2](tutorial_Boltz_bwVisu.md#step-2-connect-to-bwvisu-and-start-jupyter)). That is because the Jupyter instance is started directly on the GPU you choose. 
 
 Now with `ssh` access to Helix, we have access to all the resources that Helix has to offer (see list [here](https://wiki.bwhpc.de/e/Helix/Hardware)) and we need to add that information to our run file, so we end up using the resources we want.
 
@@ -122,7 +122,7 @@ Once the multi-sequence alignment is done, you should find the `.a3m` alignment 
 
 ## Run Boltz
 
-Now we will adapt the `run.sh` and input `.yaml` files that controls the Boltz inference calculations. Go to your `$WORKDIR` and look for the exact names of these files.
+Now we will adapt the `run.sh` and input `.yaml` files that control the Boltz inference calculations. Go to your `$WORKDIR` and look for the exact names of these files.
 
 ### Adapt the `.yaml` file
 

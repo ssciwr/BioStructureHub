@@ -2,7 +2,7 @@
 
 For any publication that includes structure predictions by the Bio-Structure Hub, please consider adding an acknowledgement statement along these lines:
 
-*The authors acknowledge the development work by Bio-Structure Hub at the Scientific Software Center of Heidelberg University.*
+*The authors acknowledge the development work by the Bio-Structure Hub at the Scientific Software Center of Heidelberg University.*
 
 Additionally, it would be very much appreciated if you notify us about these publications. 
 
