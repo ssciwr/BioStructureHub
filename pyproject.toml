@@ -7,7 +7,7 @@ name = "BioStructureHub"
 version = "0.1.0-dev"
 description = "A set of Jupyter notebooks and tutorials for running protein 3D structure prediction and design software on bwForCluster bwVisu / Helix."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 authors = [{name = "Christine Schulz", email = "christine.schulz@iwr.uni-heidelberg.de"},
            {name = "Inga Ulusoy", email = "inga.ulusoy@iwr.uni-heidelberg.de"}]
