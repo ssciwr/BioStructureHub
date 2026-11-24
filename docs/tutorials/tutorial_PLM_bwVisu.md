@@ -58,7 +58,7 @@ After the upload, you can see the notebooks in the file browser on the left.
 
 ### Step 4: Open the Notebook and Start the Calculation
 
-Open `PLM_interact.ipynb` and  execute the cells in the notebook to start your Boltzgen run!
+Open `PLM_interact.ipynb` and  execute the cells in the notebook to start your PLM-interact run!
 
 
 #### Verify Input

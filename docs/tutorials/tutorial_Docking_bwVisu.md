@@ -1,10 +1,10 @@
 # Small Molecule Docking on bwVisu
 
-Welcome to the Dokcing Tutorial for bwVisu! 
+Welcome to the Docking Tutorial for bwVisu! 
 
-This tutorial will guide you through running quick docking example on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+This tutorial will guide you through running a quick docking example on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
-This tutorial can be used based on an existing experimental structure or as a follow up to a structure prediction using either [AlphaFold](/docs/tutorials/tutorial_AF_bwVisu.md) or [Boltz](/docs/tutorials/tutorial_Boltz_bwVisu.md). Make sure to consider the  <a href="https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md" target="_blank" rel="noopener">Output Terms of Use</a> if your work with AlphaFold3.
+This tutorial can be used based on an existing experimental structure or as a follow up to a structure prediction using either [AlphaFold](tutorial_AF_bwVisu.md) or [Boltz](tutorial_Boltz_bwVisu.md). Make sure to consider the  <a href="https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md" target="_blank" rel="noopener">Output Terms of Use</a> if you work with AlphaFold3.
 
 Note that only small molecules can be treated with this workflow. If you have more complex systems, [contact us](../contact.md) to discuss a solution.
 
@@ -53,7 +53,7 @@ Finally your input files should look like:
 
 ### Step 5: Start the Simulation
 
-Open `Doocking.ipynb`, add your `.pdb` or`.cif` file, as well as your `.csv` file in the notebook and then execute all the cells in the notebook to start your Docking run! Remember to set the kernel in the top right of the notebook to "docking".
+Open `Docking.ipynb`, add your `.pdb` or`.cif` file, as well as your `.csv` file in the notebook and then execute all the cells in the notebook to start your Docking run! Remember to set the kernel in the top right of the notebook to "docking".
 
 
 ### References
