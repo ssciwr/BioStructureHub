@@ -62,7 +62,7 @@ Execute the steps in the notebook to start the calculation.
 
 #### Verify Input
 
-Before starting your Boltz prediction you should see the following files in your working directory:
+Before starting your RFDiffusion run you should see the following files in your working directory:
 
 ![Screenshot](../images/tutorial/bwVisu_RFD_input.png){: .invertable style="width:268px"}
 

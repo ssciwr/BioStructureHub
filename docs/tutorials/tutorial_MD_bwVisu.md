@@ -2,9 +2,9 @@
 
 Welcome to the Molecular Dynamics Tutorial for bwVisu! 
 
-This tutorial will guide you through running short Molecular Dynamics Simulation on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
+This tutorial will guide you through running a short Molecular Dynamics Simulation on bwVisu. Please follow these steps carefully. Any feedback on the tutorial is welcome! Feel free to [contact us](../contact.md)!
 
-This tutorial is intended as a follow up to a structure prediction using either [AlphaFold](/docs/tutorials/tutorial_AF_bwVisu.md) or [Boltz](/docs/tutorials/tutorial_Boltz_bwVisu.md). 
+This tutorial is intended as a follow up to a structure prediction using either [AlphaFold](tutorial_AF_bwVisu.md) or [Boltz](tutorial_Boltz_bwVisu.md). 
 
 Note that only proteins, DNA and small molecules can be treated with this workflow. If you have more complex systems, [contact us](../contact.md) to discuss a solution.
 

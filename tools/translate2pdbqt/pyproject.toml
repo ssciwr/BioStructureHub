@@ -1,0 +1,13 @@
+[project]
+name = "translate2pdbqt"
+version = "0.1.0"
+dependencies = [
+    "openbabel",
+]
+
+[project.scripts]
+translate2pdbqt = "translate2pdbqt.translate2pdbqt:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

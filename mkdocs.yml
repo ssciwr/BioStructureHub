@@ -44,7 +44,6 @@ nav:
   - Who we are: 
     - about.md
     - projects.md
-    - cite.md
     - News:
       - blog/index.md
   - What we offer: 
@@ -54,6 +53,7 @@ nav:
     - resources/methods.md
     - resources/learning.md
   - Tutorials: 
+    - tutorials/tutorials.md
     - tutorials/tutorial_AF2_bwVisu.md 
     - tutorials/tutorial_AF3_bwVisu.md 
     - tutorials/tutorial_Bindcraft_bwVisu.md
@@ -61,6 +61,7 @@ nav:
     - tutorials/tutorial_Boltzgen_bwVisu.md
     - tutorials/tutorial_RFDiffusion_bwVisu.md
     - tutorials/tutorial_MD_bwVisu.md
+    - tutorials/tutorial_Docking_bwVisu.md
     - tutorials/tutorial_use_templates.md
     - tutorials/tutorial_PLM_bwVisu.md
     - tutorials/tutorial_bwvisu2helix.md
@@ -88,3 +89,4 @@ plugins:
       blog_toc: true
   - search
   - callouts
+  - mkdocs-pdf
