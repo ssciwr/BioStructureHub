@@ -7,10 +7,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = REPO_ROOT / "notebooks/afold_test"
 
 output_json = OUTPUT_DIR / "input.json"
-reference_json = REPO_ROOT / "references/afold/input.json"
+reference_json = REPO_ROOT / "references/afold3/input.json"
 
 output_sh = OUTPUT_DIR / "run.sh"
-reference_sh = REPO_ROOT / "references/afold/run.sh"
+reference_sh = REPO_ROOT / "references/afold3/run.sh"
 
 
 MARKERS = ["afold_test", "af3models"]
